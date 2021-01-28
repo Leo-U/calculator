@@ -1,0 +1,78 @@
+#buttons-container {
+    height: 540px;
+    width: 540px;
+    background-color: #BEBEBE;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button {
+    height: 25%;
+    width: 25%;
+    background-repeat: no-repeat;
+}
+
+#button-7 {
+    background-image: url(images/7.png);
+}
+
+#button-8 {
+    background-image: url(images/8.png);
+}
+
+#button-9 {
+    background-image: url(images/9.png);
+}
+
+#button-divide {
+    background-image: url(images/divide.png);
+}
+
+#button-4 {
+    background-image: url(images/4.png);
+}
+
+#button-5 {
+    background-image: url(images/5.png);
+}
+
+#button-6 {
+    background-image: url(images/6.png);
+}
+
+#button-multiply {
+    background-image: url(images/multiply.png);
+}
+
+#button-1 {
+    background-image: url(images/1.png);
+}
+
+#button-2 {
+    background-image: url(images/2.png);
+}
+
+#button-3 {
+    background-image: url(images/3.png);
+}
+
+#button-subtract {
+    background-image: url(images/subtract.png);
+}
+
+#button-0 {
+    background-image: url(images/0.png);
+}
+
+#button-clear {
+    background-image: url(images/clear.png);
+}
+
+#button-enter {
+    background-image: url(images/enter.png);
+}
+
+#button-add {
+    background-image: url(images/add.png);
+}
+
