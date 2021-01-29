@@ -6,6 +6,12 @@
     flex-wrap: wrap;
 }
 
+#buttons-container-2 {
+    height: 135px;
+    width: 540px;
+    background-color: #BEBEBE;
+}
+
 .button {
     height: 25%;
     width: 25%;
@@ -64,14 +70,28 @@
     background-image: url(images/0.png);
 }
 
+#button-point {
+    background-image: url(images/point.png);
+}
+
+#button-power {
+    background-image: url(images/power.png);
+}
+
+#button-add {
+    background-image: url(images/add.png);
+}
+
+#button-back {
+    background-image: url(images/back.png);
+}
+
 #button-clear {
     background-image: url(images/clear.png);
 }
 
 #button-enter {
     background-image: url(images/enter.png);
-}
-
-#button-add {
-    background-image: url(images/add.png);
+    width: 50%;
+    
 }

@@ -323,26 +323,26 @@ document.addEventListener("keyup", function(event) {
     }
 });
 
-const buttonClear = document.querySelector('#button-clear');
-const pressedClear = () => {
-    buttonClear.style.background = 'url(images/clear-pressed.png)';
-    buttonClear.style.backgroundRepeat = 'no-repeat';
+const buttonBack = document.querySelector('#button-back');
+const pressedBack = () => {
+    buttonBack.style.background = 'url(images/back-pressed.png)';
+    buttonBack.style.backgroundRepeat = 'no-repeat';
     
 };
-const unpressedClear = () => {
-    buttonClear.style.background = 'url(images/clear.png)';
-    buttonClear.style.backgroundRepeat = 'no-repeat';
+const unpressedBack = () => {
+    buttonBack.style.background = 'url(images/back.png)';
+    buttonBack.style.backgroundRepeat = 'no-repeat';
 }
-buttonClear.addEventListener('mousedown', pressedClear);
-buttonClear.addEventListener('mouseup', unpressedClear);
+buttonBack.addEventListener('mousedown', pressedBack);
+buttonBack.addEventListener('mouseup', unpressedBack);
 document.addEventListener("keydown", function(event) {
-    if (event.key == 'Backspace' || event.key == 'Delete') {
-      pressedClear();
+    if (event.key == 'Backspace') {
+      pressedBack();
     }
 });
 document.addEventListener("keyup", function(event) {
-    if (event.key == 'Backspace'|| event.key == 'Delete') {
-      unpressedClear();
+    if (event.key == 'Backspace') {
+      unpressedBack();
     }
 });
 
@@ -389,5 +389,74 @@ document.addEventListener("keydown", function(event) {
 document.addEventListener("keyup", function(event) {
     if (event.key == '+') {
       unpressedAdd();
+    }
+});
+
+const buttonPoint = document.querySelector('#button-point');
+const pressedPoint = () => {
+    buttonPoint.style.background = 'url(images/point-pressed.png)';
+    buttonPoint.style.backgroundRepeat = 'no-repeat';
+    
+};
+const unpressedPoint = () => {
+    buttonPoint.style.background = 'url(images/point.png)';
+    buttonPoint.style.backgroundRepeat = 'no-repeat';
+}
+buttonPoint.addEventListener('mousedown', pressedPoint);
+buttonPoint.addEventListener('mouseup', unpressedPoint);
+document.addEventListener("keydown", function(event) {
+    if (event.key == '.') {
+      pressedPoint();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '.') {
+      unpressedPoint();
+    }
+});
+
+const buttonPower = document.querySelector('#button-power');
+const pressedPower = () => {
+    buttonPower.style.background = 'url(images/power-pressed.png)';
+    buttonPower.style.backgroundRepeat = 'no-repeat';
+    
+};
+const unpressedPower = () => {
+    buttonPower.style.background = 'url(images/power.png)';
+    buttonPower.style.backgroundRepeat = 'no-repeat';
+}
+buttonPower.addEventListener('mousedown', pressedPower);
+buttonPower.addEventListener('mouseup', unpressedPower);
+document.addEventListener("keydown", function(event) {
+    if (event.key == '^') {
+      pressedPower();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '^') {
+      unpressedPower();
+    }
+});
+
+const buttonClear = document.querySelector('#button-clear');
+const pressedClear = () => {
+    buttonClear.style.background = 'url(images/clear-pressed.png)';
+    buttonClear.style.backgroundRepeat = 'no-repeat';
+    
+};
+const unpressedClear = () => {
+    buttonClear.style.background = 'url(images/clear.png)';
+    buttonClear.style.backgroundRepeat = 'no-repeat';
+}
+buttonClear.addEventListener('mousedown', pressedClear);
+buttonClear.addEventListener('mouseup', unpressedClear);
+document.addEventListener("keydown", function(event) {
+    if (event.key == 'Delete') {
+      pressedClear();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == 'Delete') {
+      unpressedClear();
     }
 });
