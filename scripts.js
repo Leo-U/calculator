@@ -21,9 +21,7 @@ const operate = function(sign, a, b) {
     };
 };
 
-
-
-//event listeners
+//styling event listeners
 
 const button7 = document.querySelector('#button-7');
 const pressed7 = () => {
