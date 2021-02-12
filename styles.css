@@ -8,12 +8,42 @@
 #numbers-div {
     height: 145px;
     width: 538px;
-    background: url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg);
+    background: 
+    
+    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
+    
+    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
+    
+    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
+    
+    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
+    
+    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
+
+    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
+    
+    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg);
+
     background-repeat: no-repeat;
     background-color: #bdc8b8;
     border: 1px solid black;
-    background-size: 8% 44%, 8% 44%, 8% 44%, 8% 44%, 8% 44%, 8% 44%, 8% 44%, 3.6%;
-    background-position: 3% 10%, 8.1% -20%, 13.1% 10%, 8% 49.5%, 3% 90%, 13.1% 90%, 8.1% 120%, 57.73% 97%, 23% 10%, 28.1% -20%, 33.1% 10%, 28% 49.5%, 23% 90%, 33.1% 90%, 28.1% 120%, 19.5% 97%, 43% 10%, 48.1% -20%, 53.1% 10%, 48% 49.5%, 43% 90%, 53.1% 90%, 48.1% 120%, 38.7% 97%, 63% 10%, 68.1% -20%, 73.1% 10%, 68% 49.5%, 63% 90%, 73.1% 90%, 68.1% 120%, 76.73% 97%, 83% 10%, 88.1% -20%, 93.1% 10%, 88% 49.5%, 83% 90%, 93.1% 90%, 88.1% 120%, 96% 97%;
+
+    background-size: 6% 32.5%, 6% 32.5%, 6% 32.5%, 6% 32.5%, 6% 32.5%, 6% 32.5%, 6% 32.5%, 2.6%;
+    background-position: 
+
+    -0.3% 28%, 3.5% 9%, 7.2% 28%, 3.45% 52.4%, -0.3% 77.4%, 7.2% 77.4%, 3.5% 96%, 12.1% 86%, 
+    
+    14.7% 28%, 18.5% 9%, 22.2% 28%, 18.45% 52.4%, 14.7% 77.4%, 22.2% 77.4%, 18.5% 96%, 26.6% 86%, 
+    
+    29.7% 28%, 33.5% 9%, 37.2% 28%, 33.45% 52.4%, 29.7% 77.4%, 37.2% 77.4%, 33.5% 96%, 41.1% 86%, 
+    
+    44.7% 28%, 48.5% 9%, 52.2% 28%, 48.45% 52.4%, 44.7% 77.4%, 52.2% 77.4%, 48.5% 96%, 55.6% 86%, 
+    
+    59.7% 28%, 63.5% 9%, 67.2% 28%, 63.45% 52.4%, 59.7% 77.4%, 67.2% 77.4%, 63.5% 96%, 70.1% 86%, 
+    
+    74.7% 28%, 78.5% 9%, 82.2% 28%, 78.45% 52.4%, 74.7% 77.4%, 82.2% 77.4%, 78.5% 94%, 84.6% 86%, 
+    
+    89.7% 28%, 93.5% 9%, 97.2% 28%, 93.45% 52.4%, 89.7% 77.4%, 97.2% 77.4%, 93.5% 96%, 99.1% 86%;
 }
 
 
