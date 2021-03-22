@@ -10,40 +10,26 @@
     width: 538px;
     background: 
     
-    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
+    url(images/num-blank.svg), url(images/dot-blank.svg),
+    url(images/num-blank.svg), url(images/dot-blank.svg),
+    url(images/num-blank.svg), url(images/dot-blank.svg),
+    url(images/num-blank.svg), url(images/dot-blank.svg),
+    url(images/num-blank.svg), url(images/dot-blank.svg),
+    url(images/num-blank.svg), url(images/dot-blank.svg);
     
-    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
-    
-    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
-    
-    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
-    
-    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
+    background-size: 73% 73%, 11% 11%;
 
-    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg), 
-    
-    url(images/top-left.svg), url(images/top.svg), url(images/top-right.svg), url(images/middle.svg), url(images/bottom-left.svg), url(images/bottom-right.svg), url(images/bottom.svg), url(images/dot.svg);
+    background-position: 
+    -85% 55%, 16.5% 83%,
+    -32% 55%, 32.5% 83%,
+    21% 55%, 48.5% 83%,
+    74% 55%, 65% 83%,
+    127% 55%, 81% 83%,
+    180% 55%, 97% 83%;
 
     background-repeat: no-repeat;
     background-color: #bdc8b8;
     border: 1px solid black;
-
-    background-size: 6% 32.5%, 6% 32.5%, 6% 32.5%, 6% 32.5%, 6% 32.5%, 6% 32.5%, 6% 32.5%, 2.6%;
-    background-position: 
-
-    -0.3% 28%, 3.5% 9%, 7.2% 28%, 3.45% 52.4%, -0.3% 77.4%, 7.2% 77.4%, 3.5% 96%, 12.1% 86%, 
-    
-    14.7% 28%, 18.5% 9%, 22.2% 28%, 18.45% 52.4%, 14.7% 77.4%, 22.2% 77.4%, 18.5% 96%, 26.6% 86%, 
-    
-    29.7% 28%, 33.5% 9%, 37.2% 28%, 33.45% 52.4%, 29.7% 77.4%, 37.2% 77.4%, 33.5% 96%, 41.1% 86%, 
-    
-    44.7% 28%, 48.5% 9%, 52.2% 28%, 48.45% 52.4%, 44.7% 77.4%, 52.2% 77.4%, 48.5% 96%, 55.6% 86%, 
-    
-    59.7% 28%, 63.5% 9%, 67.2% 28%, 63.45% 52.4%, 59.7% 77.4%, 67.2% 77.4%, 63.5% 96%, 70.1% 86%, 
-    
-    74.7% 28%, 78.5% 9%, 82.2% 28%, 78.45% 52.4%, 74.7% 77.4%, 82.2% 77.4%, 78.5% 94%, 84.6% 86%, 
-    
-    89.7% 28%, 93.5% 9%, 97.2% 28%, 93.45% 52.4%, 89.7% 77.4%, 97.2% 77.4%, 93.5% 96%, 99.1% 86%;
 }
 
 
