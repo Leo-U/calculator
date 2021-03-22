@@ -51,6 +51,10 @@ const pressed7 = () => {
     button7.style.backgroundRepeat = 'no-repeat';
     entryString = entryString + "7";
 
+    if (entryString.charAt(0) == ".") {
+        entryString = "0" + entryString
+    };
+
     if (entryString.charAt(entryString.length-1) == "7") {
         if(entryString.length == 1) {
             firstChar.style.backgroundImage = "url('images/seven.svg')";
@@ -109,6 +113,10 @@ const pressed8 = () => {
     button8.style.background = 'url(images/8-pressed.png)';
     button8.style.backgroundRepeat = 'no-repeat';
     entryString = entryString + "8";
+
+    if (entryString.charAt(0) == ".") {
+        entryString = "0" + entryString
+    };
     
     if (entryString.charAt(entryString.length-1) == "8") {
         if(entryString.length == 1) {
@@ -168,6 +176,10 @@ const pressed9 = () => {
     button9.style.background = 'url(images/9-pressed.png)';
     button9.style.backgroundRepeat = 'no-repeat';
     entryString = entryString + "9";
+
+    if (entryString.charAt(0) == ".") {
+        entryString = "0" + entryString
+    };
 
     if (entryString.charAt(entryString.length-1) == "9") {
         if(entryString.length == 1) {
@@ -251,6 +263,10 @@ const pressed4 = () => {
     button4.style.backgroundRepeat = 'no-repeat';
     entryString = entryString + "4";
 
+    if (entryString.charAt(0) == ".") {
+        entryString = "0" + entryString
+    };
+
     if (entryString.charAt(entryString.length-1) == "4") {
         if(entryString.length == 1) {
             firstChar.style.backgroundImage = "url('images/four.svg')";
@@ -309,6 +325,10 @@ const pressed5 = () => {
     button5.style.background = 'url(images/5-pressed.png)';
     button5.style.backgroundRepeat = 'no-repeat';
     entryString = entryString + "5";
+
+    if (entryString.charAt(0) == ".") {
+        entryString = "0" + entryString
+    };
     
     if (entryString.charAt(entryString.length-1) == "5") {
         if(entryString.length == 1) {
@@ -368,6 +388,10 @@ const pressed6 = () => {
     button6.style.background = 'url(images/6-pressed.png)';
     button6.style.backgroundRepeat = 'no-repeat';
     entryString = entryString + "6";
+
+    if (entryString.charAt(0) == ".") {
+        entryString = "0" + entryString
+    };
     
     if (entryString.charAt(entryString.length-1) == "6") {
         if(entryString.length == 1) {
@@ -449,6 +473,10 @@ const pressed1 = () => {
     button1.style.background = 'url(images/1-pressed.png)';
     button1.style.backgroundRepeat = 'no-repeat';
     entryString = entryString + "1";
+
+    if (entryString.charAt(0) == ".") {
+        entryString = "0" + entryString
+    };
     
     if (entryString.charAt(entryString.length-1) == "1") {
         if(entryString.length == 1) {
@@ -509,6 +537,10 @@ const pressed2 = () => {
     button2.style.backgroundRepeat = 'no-repeat';
     entryString = entryString + "2";
 
+    if (entryString.charAt(0) == ".") {
+        entryString = "0" + entryString
+    };
+
     if (entryString.charAt(entryString.length-1) == "2") {
         if(entryString.length == 1) {
             firstChar.style.backgroundImage = "url('images/two.svg')";
@@ -567,6 +599,10 @@ const pressed3 = () => {
     button3.style.background = 'url(images/3-pressed.png)';
     button3.style.backgroundRepeat = 'no-repeat';
     entryString = entryString + "3";
+
+    if (entryString.charAt(0) == ".") {
+        entryString = "0" + entryString
+    };
     
     if (entryString.charAt(entryString.length-1) == "3") {
         if(entryString.length == 1) {
@@ -649,6 +685,10 @@ const pressed0 = () => {
     button0.style.background = 'url(images/0-pressed.png)';
     button0.style.backgroundRepeat = 'no-repeat';
     entryString = entryString + "0";
+
+    if (entryString.charAt(0) == ".") {
+        entryString = "0" + entryString
+    };
     
     if (entryString.charAt(entryString.length-1) == "0") {
         if(entryString.length == 1) {
