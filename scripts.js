@@ -28,8 +28,6 @@ const operate = function(sign, a, b) {
 
 let entryString = '';
 
-//styling event listeners
-
 const firstChar = document.querySelector('#first-char');
 const secondChar = document.querySelector('#second-char');
 const thirdChar = document.querySelector('#third-char');
@@ -805,26 +803,14 @@ document.addEventListener("keyup", function(event) {
     }
 });
 
-const buttonBack = document.querySelector('#button-back');
-const pressedBack = () => {
-    buttonBack.style.background = 'url(images/back-pressed.png)';
-    buttonBack.style.backgroundRepeat = 'no-repeat';
-    
-};
-const unpressedBack = () => {
-    buttonBack.style.background = 'url(images/back.png)';
-    buttonBack.style.backgroundRepeat = 'no-repeat';
-}
-buttonBack.addEventListener('mousedown', pressedBack);
-buttonBack.addEventListener('mouseup', unpressedBack);
 document.addEventListener("keydown", function(event) {
     if (event.key == 'Backspace') {
-      pressedBack();
+      pressedClear();
     }
 });
 document.addEventListener("keyup", function(event) {
     if (event.key == 'Backspace') {
-      unpressedBack();
+      unpressedClear();
     }
 });
 
@@ -953,7 +939,19 @@ const buttonClear = document.querySelector('#button-clear');
 const pressedClear = () => {
     buttonClear.style.background = 'url(images/clear-pressed.png)';
     buttonClear.style.backgroundRepeat = 'no-repeat';
-    
+    entryString = '';
+    firstChar.style.backgroundImage = "url('images/num-blank.svg')";
+    secondChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    thirdChar.style.backgroundImage = "url('images/num-blank.svg')";
+    fourthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    fifthChar.style.backgroundImage = "url('images/num-blank.svg')";
+    sixthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    seventhChar.style.backgroundImage = "url('images/num-blank.svg')";
+    eighthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    ninthChar.style.backgroundImage = "url('images/num-blank.svg')";
+    tenthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    eleventhChar.style.backgroundImage = "url('images/num-blank.svg')";
+    twelfthChar.style.backgroundImage = "url('images/dot-blank.svg')";
 };
 const unpressedClear = () => {
     buttonClear.style.background = 'url(images/clear.png)';

@@ -1,10 +1,3 @@
-/* #numbers-div {
-    height: 70px;
-    width: 150px;
-    background-color: #bdc8b8;
-    border: 1px solid black;
-} */
-
 #calc-container {
     margin: auto;
     width: 580px;
@@ -133,13 +126,9 @@
     background-image: url(images/add.png);
 }
 
-
-#button-back {
-    background-image: url(images/back.png);
-}
-
 #button-clear {
     background-image: url(images/clear.png);
+    width: 50%;
 }
 
 #button-enter {
