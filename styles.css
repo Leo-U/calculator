@@ -10,7 +10,7 @@
 #display-div {
     margin: auto;
     height: 145px;
-    width: 538px;
+    width: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,22 +23,26 @@
 #first-char, #third-char, #fifth-char, #seventh-char, #ninth-char, #eleventh-char {
     height: 100px;
     width: 65px;
+    margin-left: 5px;
+    margin-right: -2px;
     background:url(images/num-blank.svg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
-#second-char, #fourth-char, #sixth-char, #eighth-char, #tenth-char, #twelfth-char {
+#second-char, #fourth-char, #sixth-char, #eighth-char, #tenth-char, #twelfth-char, #thirteenth-char {
     height: 16px;
     width: 16px;
     margin-top: 75px;
-    margin-right: 4px;
-    margin-left: -3px;
     background:url(images/dot-blank.svg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
+#thirteenth-char {
+    position: relative;
+    left: 3px;
+}
 
 #buttons-container {
     height: 540px;
