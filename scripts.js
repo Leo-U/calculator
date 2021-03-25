@@ -1326,7 +1326,16 @@ const pressedClear = () => {
 const altClear = () => {
     if (saveCheck !== true) {
         savedData = entryString;
-    }
+    };
+    if (saveCheck == true) {
+        savedData = savedData + entryString.charAt(entryString.length - 1)
+    };
+    if (savedData.slice(-2) !== entryString.slice(-2)) {
+        savedData = savedData.substring(0, savedData.length - 1)
+    };
+    if (savedData.length > 6 && entryString.charAt(entryString.length-2) == ".") {
+        savedData = savedData + "." + entryString.charAt(entryString.length-1)
+    };
     saveCheck = true;
     entryString = '';
     firstChar.style.backgroundImage = "url('images/num-blank.svg')";
