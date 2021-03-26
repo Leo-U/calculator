@@ -1029,20 +1029,7 @@ const pressedClearAnim = () => {
     buttonClear.style.backgroundRepeat = 'no-repeat';
 }
 const pressedClear = () => {
-    entryString = '';
-    firstChar.style.backgroundImage = "url('images/num-blank.svg')";
-    secondChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    thirdChar.style.backgroundImage = "url('images/num-blank.svg')";
-    fourthChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    fifthChar.style.backgroundImage = "url('images/num-blank.svg')";
-    sixthChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    seventhChar.style.backgroundImage = "url('images/num-blank.svg')";
-    eighthChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    ninthChar.style.backgroundImage = "url('images/num-blank.svg')";
-    tenthChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    eleventhChar.style.backgroundImage = "url('images/num-blank.svg')";
-    twelfthChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    thirteenthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    location.reload();
 };
 
 const altClear = () => {

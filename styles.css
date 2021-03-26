@@ -1,4 +1,3 @@
-
 #calc-container {
     margin: auto;
     width: 580px;
@@ -141,5 +140,4 @@
 #button-enter {
     background-image: url(images/enter.png);
     width: 50%;
-    
 }
