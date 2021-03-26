@@ -83,7 +83,7 @@ const shiftLeft = () => {
                 pressed0();
             };
             if (newEntryString.charAt(0) == ".") {
-                pressedPoint();
+                secondaryPoint();
             };
         };
     };
@@ -1226,6 +1226,35 @@ const pressedPointAnim = () => {
 }
 
 const pressedPoint = () => {
+    if (!entryString.includes('.') && !savedData.includes('.')) {
+        entryString = entryString + ".";
+    };
+    if (entryString.charAt(entryString.length-1) == ".") {
+        if(entryString.length == 1) {
+            thirteenthChar.style.backgroundImage = "url('images/dot.svg')";
+        };
+        if(entryString.length == 2) {
+            secondChar.style.backgroundImage = "url('images/dot.svg')";
+        };
+        if(entryString.length == 3) {
+            fourthChar.style.backgroundImage = "url('images/dot.svg')";
+        };
+        if(entryString.length == 4) {
+            sixthChar.style.backgroundImage = "url('images/dot.svg')";
+        };
+        if(entryString.length == 5) {
+            eighthChar.style.backgroundImage = "url('images/dot.svg')";
+        };
+        if(entryString.length == 6) {
+            tenthChar.style.backgroundImage = "url('images/dot.svg')";
+        };
+        if(entryString.length == 7) {
+            twelfthChar.style.backgroundImage = "url('images/dot.svg')";
+        };
+    };
+};
+
+const secondaryPoint = () => {
     if (!entryString.includes('.')) {
         entryString = entryString + ".";
     };
@@ -1252,13 +1281,8 @@ const pressedPoint = () => {
             twelfthChar.style.backgroundImage = "url('images/dot.svg')";
         };
     };
+}
 
-    // if (entryString.charAt(0) == ".") {
-    //     entryString = "0" + entryString;
-    //     pointCheck = true;
-    // };
-    
-};
 const unpressedPoint = () => {
     buttonPoint.style.background = 'url(images/point.png)';
     buttonPoint.style.backgroundRepeat = 'no-repeat';
@@ -1336,6 +1360,9 @@ const altClear = () => {
     if (savedData.length > 6 && entryString.charAt(entryString.length-2) == ".") {
         savedData = savedData + "." + entryString.charAt(entryString.length-1)
     };
+    if (savedData.indexOf('.') !== savedData.lastIndexOf('.')) {
+        savedData = savedData.slice(0, -2)
+    }
     saveCheck = true;
     entryString = '';
     firstChar.style.backgroundImage = "url('images/num-blank.svg')";
