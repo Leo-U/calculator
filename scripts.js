@@ -89,49 +89,6 @@ const shiftLeft = () => {
     };
 };
 
-// const secondaryShift = () => {
-//     if (entryString.length >= 7 && !entryString.includes('.') || entryString.length >= 8 && entryString.includes('.')) {
-//         newEntryString = entryString;
-//         altClear();
-//         for (let i = 0; newEntryString.length > 0; i++) {
-//             newEntryString = newEntryString.slice(1);
-//             if (newEntryString.charAt(0) == "7") {
-//             pressed7();
-//             };
-//             if (newEntryString.charAt(0) == "8") {
-//             pressed8();
-//             };
-//             if (newEntryString.charAt(0) == "9") {
-//                 pressed9();
-//             };
-//             if (newEntryString.charAt(0) == "4") {
-//                 pressed4();
-//             };
-//             if (newEntryString.charAt(0) == "5") {
-//                 pressed5();
-//             };
-//             if (newEntryString.charAt(0) == "6") {
-//                 pressed6();
-//             };
-//             if (newEntryString.charAt(0) == "1") {
-//                 pressed1();
-//             };
-//             if (newEntryString.charAt(0) == "2") {
-//                 pressed2();
-//             };
-//             if (newEntryString.charAt(0) == "3") {
-//                 pressed3();
-//             };
-//             if (newEntryString.charAt(0) == "0") {
-//                 pressed0();
-//             };
-//             if (newEntryString.charAt(0) == ".") {
-//                 pressedPoint();
-//             };
-//         }
-//     }
-// };
-
 const button7 = document.querySelector('#button-7');
 const pressed7Anim = () => {
     button7.style.background = 'url(images/7-pressed.png)';
@@ -178,26 +135,6 @@ const pressed7 = () => {
                 eleventhChar.style.backgroundImage = "url('images/seven.svg')";
             };
         }
-        // if(entryString.includes('.') && entryString.charAt(1) == '.') {
-        //     if(entryString.length == 3) {
-        //         firstChar.style.backgroundImage = "url('images/seven.svg')";
-        //     };
-        //     if(entryString.length == 4) {
-        //         thirdChar.style.backgroundImage = "url('images/seven.svg')";
-        //     };
-        //     if(entryString.length == 5) {
-        //         fifthChar.style.backgroundImage = "url('images/seven.svg')";
-        //     };
-        //     if(entryString.length == 6) {
-        //         seventhChar.style.backgroundImage = "url('images/seven.svg')";
-        //     };
-        //     if(entryString.length == 7) {
-        //         ninthChar.style.backgroundImage = "url('images/seven.svg')";
-        //     };
-        //     if(entryString.length == 8) {
-        //         eleventhChar.style.backgroundImage = "url('images/seven.svg')";
-        //     };
-        // }
         if(entryString.includes('.') && entryString.charAt(0) == '.') {
             if (entryString.length == 2) {
                 firstChar.style.backgroundImage = "url('images/seven.svg')"
@@ -270,26 +207,6 @@ const pressed8 = () => {
                 eleventhChar.style.backgroundImage = "url('images/eight.svg')";
             };
         };
-        // if(entryString.includes('.') && entryString.charAt(1) == '.' && pointCheck == true) {
-        //     if(entryString.length == 3) {
-        //         firstChar.style.backgroundImage = "url('images/eight.svg')";
-        //     };
-        //     if(entryString.length == 4) {
-        //         thirdChar.style.backgroundImage = "url('images/eight.svg')";
-        //     };
-        //     if(entryString.length == 5) {
-        //         fifthChar.style.backgroundImage = "url('images/eight.svg')";
-        //     };
-        //     if(entryString.length == 6) {
-        //         seventhChar.style.backgroundImage = "url('images/eight.svg')";
-        //     };
-        //     if(entryString.length == 7) {
-        //         ninthChar.style.backgroundImage = "url('images/eight.svg')";
-        //     };
-        //     if(entryString.length == 8) {
-        //         eleventhChar.style.backgroundImage = "url('images/eight.svg')";
-        //     };
-        // };
         if(entryString.includes('.') && entryString.charAt(0) == '.') {
             if (entryString.length == 2) {
                 firstChar.style.backgroundImage = "url('images/eight.svg')"
@@ -361,27 +278,7 @@ const pressed9 = () => {
             if(entryString.length == 7) {
                 eleventhChar.style.backgroundImage = "url('images/nine.svg')";
             };
-        }
-        // if(entryString.includes('.') && entryString.charAt(1) == '.'&& pointCheck == true) {
-        //     if(entryString.length == 3) {
-        //         firstChar.style.backgroundImage = "url('images/nine.svg')";
-        //     };
-        //     if(entryString.length == 4) {
-        //         thirdChar.style.backgroundImage = "url('images/nine.svg')";
-        //     };
-        //     if(entryString.length == 5) {
-        //         fifthChar.style.backgroundImage = "url('images/nine.svg')";
-        //     };
-        //     if(entryString.length == 6) {
-        //         seventhChar.style.backgroundImage = "url('images/nine.svg')";
-        //     };
-        //     if(entryString.length == 7) {
-        //         ninthChar.style.backgroundImage = "url('images/nine.svg')";
-        //     };
-        //     if(entryString.length == 8) {
-        //         eleventhChar.style.backgroundImage = "url('images/nine.svg')";
-        //     };
-        // };
+        };
         if(entryString.includes('.') && entryString.charAt(0) == '.') {
             if (entryString.length == 2) {
                 firstChar.style.backgroundImage = "url('images/nine.svg')"
@@ -430,48 +327,7 @@ document.addEventListener("keyup", function(event) {
       unpressedDivide();
     }
 });
-    // if (entryString.charAt(entryString.length-1) == "4") {
-    //     if(entryString.length == 1) {
-    //         firstChar.style.backgroundImage = "url('images/four.svg')";
-    //     };
-    //     if(entryString.length == 2) {
-    //         thirdChar.style.backgroundImage = "url('images/four.svg')";
-    //     };
-    //     if(!entryString.includes('.')) {
-    //         if(entryString.length == 3) {
-    //             fifthChar.style.backgroundImage = "url('images/four.svg')";
-    //         };
-    //         if(entryString.length == 4) {
-    //             seventhChar.style.backgroundImage = "url('images/four.svg')";
-    //         };
-    //         if(entryString.length == 5) {
-    //             ninthChar.style.backgroundImage = "url('images/four.svg')";
-    //         };
-    //         if(entryString.length == 6) {
-    //             eleventhChar.style.backgroundImage = "url('images/four.svg')";
-    //         };
-    //     }
-    //     if(entryString.includes('.')){
-    //         if(entryString.length == 3) {
-    //             thirdChar.style.backgroundImage = "url('images/four.svg')";
-    //         };
 
-    //         if(entryString.length == 4) {
-    //             fifthChar.style.backgroundImage = "url('images/four.svg')";
-    //         };
-
-    //         if(entryString.length == 5) {
-    //             seventhChar.style.backgroundImage = "url('images/four.svg')";
-    //         };
-
-    //         if(entryString.length == 6) {
-    //             ninthChar.style.backgroundImage = "url('images/four.svg')";
-    //         };
-    //         if(entryString.length == 7) {
-    //             eleventhChar.style.backgroundImage = "url('images/four.svg')";
-    //         };
-    //     }
-    // }
 const button4 = document.querySelector('#button-4');
 const pressed4Anim = () => {
     button4.style.background = 'url(images/4-pressed.png)';
@@ -518,26 +374,6 @@ const pressed4 = () => {
                 eleventhChar.style.backgroundImage = "url('images/four.svg')";
             };
         }
-        // if(entryString.includes('.') && entryString.charAt(1) == '.'&& pointCheck == true) {
-        //     if(entryString.length == 3) {
-        //         firstChar.style.backgroundImage = "url('images/four.svg')";
-        //     };
-        //     if(entryString.length == 4) {
-        //         thirdChar.style.backgroundImage = "url('images/four.svg')";
-        //     };
-        //     if(entryString.length == 5) {
-        //         fifthChar.style.backgroundImage = "url('images/four.svg')";
-        //     };
-        //     if(entryString.length == 6) {
-        //         seventhChar.style.backgroundImage = "url('images/four.svg')";
-        //     };
-        //     if(entryString.length == 7) {
-        //         ninthChar.style.backgroundImage = "url('images/four.svg')";
-        //     };
-        //     if(entryString.length == 8) {
-        //         eleventhChar.style.backgroundImage = "url('images/four.svg')";
-        //     };
-        // };
         if(entryString.includes('.') && entryString.charAt(0) == '.') {
             if (entryString.length == 2) {
                 firstChar.style.backgroundImage = "url('images/four.svg')"
@@ -609,27 +445,7 @@ const pressed5 = () => {
             if(entryString.length == 7) {
                 eleventhChar.style.backgroundImage = "url('images/five.svg')";
             };
-        }
-        // if(entryString.includes('.') && entryString.charAt(1) == '.'&& pointCheck == true) {
-        //     if(entryString.length == 3) {
-        //         firstChar.style.backgroundImage = "url('images/five.svg')";
-        //     };
-        //     if(entryString.length == 4) {
-        //         thirdChar.style.backgroundImage = "url('images/five.svg')";
-        //     };
-        //     if(entryString.length == 5) {
-        //         fifthChar.style.backgroundImage = "url('images/five.svg')";
-        //     };
-        //     if(entryString.length == 6) {
-        //         seventhChar.style.backgroundImage = "url('images/five.svg')";
-        //     };
-        //     if(entryString.length == 7) {
-        //         ninthChar.style.backgroundImage = "url('images/five.svg')";
-        //     };
-        //     if(entryString.length == 8) {
-        //         eleventhChar.style.backgroundImage = "url('images/five.svg')";
-        //     };
-        // };
+        };
         if(entryString.includes('.') && entryString.charAt(0) == '.') {
             if (entryString.length == 2) {
                 firstChar.style.backgroundImage = "url('images/five.svg')"
@@ -701,27 +517,7 @@ const pressed6 = () => {
             if(entryString.length == 7) {
                 eleventhChar.style.backgroundImage = "url('images/six.svg')";
             };
-        }
-        // if(entryString.includes('.') && entryString.charAt(1) == '.'&& pointCheck == true) {
-        //     if(entryString.length == 3) {
-        //         firstChar.style.backgroundImage = "url('images/six.svg')";
-        //     };
-        //     if(entryString.length == 4) {
-        //         thirdChar.style.backgroundImage = "url('images/six.svg')";
-        //     };
-        //     if(entryString.length == 5) {
-        //         fifthChar.style.backgroundImage = "url('images/six.svg')";
-        //     };
-        //     if(entryString.length == 6) {
-        //         seventhChar.style.backgroundImage = "url('images/six.svg')";
-        //     };
-        //     if(entryString.length == 7) {
-        //         ninthChar.style.backgroundImage = "url('images/six.svg')";
-        //     };
-        //     if(entryString.length == 8) {
-        //         eleventhChar.style.backgroundImage = "url('images/six.svg')";
-        //     };
-        // };
+        };
         if(entryString.includes('.') && entryString.charAt(0) == '.') {
             if (entryString.length == 2) {
                 firstChar.style.backgroundImage = "url('images/six.svg')"
@@ -815,27 +611,7 @@ const pressed1 = () => {
             if(entryString.length == 7) {
                 eleventhChar.style.backgroundImage = "url('images/one.svg')";
             };
-        }
-        // if(entryString.includes('.') && entryString.charAt(1) == '.'&& pointCheck == true) {
-        //     if(entryString.length == 3) {
-        //         firstChar.style.backgroundImage = "url('images/one.svg')";
-        //     };
-        //     if(entryString.length == 4) {
-        //         thirdChar.style.backgroundImage = "url('images/one.svg')";
-        //     };
-        //     if(entryString.length == 5) {
-        //         fifthChar.style.backgroundImage = "url('images/one.svg')";
-        //     };
-        //     if(entryString.length == 6) {
-        //         seventhChar.style.backgroundImage = "url('images/one.svg')";
-        //     };
-        //     if(entryString.length == 7) {
-        //         ninthChar.style.backgroundImage = "url('images/one.svg')";
-        //     };
-        //     if(entryString.length == 8) {
-        //         eleventhChar.style.backgroundImage = "url('images/one.svg')";
-        //     };
-        // };
+        };
         if(entryString.includes('.') && entryString.charAt(0) == '.') {
             if (entryString.length == 2) {
                 firstChar.style.backgroundImage = "url('images/one.svg')"
@@ -907,27 +683,7 @@ const pressed2 = () => {
             if(entryString.length == 7) {
                 eleventhChar.style.backgroundImage = "url('images/two.svg')";
             };
-        }
-        // if(entryString.includes('.') && entryString.charAt(1) == '.'&& pointCheck == true) {
-        //     if(entryString.length == 3) {
-        //         firstChar.style.backgroundImage = "url('images/two.svg')";
-        //     };
-        //     if(entryString.length == 4) {
-        //         thirdChar.style.backgroundImage = "url('images/two.svg')";
-        //     };
-        //     if(entryString.length == 5) {
-        //         fifthChar.style.backgroundImage = "url('images/two.svg')";
-        //     };
-        //     if(entryString.length == 6) {
-        //         seventhChar.style.backgroundImage = "url('images/two.svg')";
-        //     };
-        //     if(entryString.length == 7) {
-        //         ninthChar.style.backgroundImage = "url('images/two.svg')";
-        //     };
-        //     if(entryString.length == 8) {
-        //         eleventhChar.style.backgroundImage = "url('images/two.svg')";
-        //     };
-        // };
+        };
         if(entryString.includes('.') && entryString.charAt(0) == '.') {
             if (entryString.length == 2) {
                 firstChar.style.backgroundImage = "url('images/two.svg')"
@@ -999,27 +755,7 @@ const pressed3 = () => {
             if(entryString.length == 7) {
                 eleventhChar.style.backgroundImage = "url('images/three.svg')";
             };
-        }
-        // if(entryString.includes('.') && entryString.charAt(1) == '.'&& pointCheck == true) {
-        //     if(entryString.length == 3) {
-        //         firstChar.style.backgroundImage = "url('images/three.svg')";
-        //     };
-        //     if(entryString.length == 4) {
-        //         thirdChar.style.backgroundImage = "url('images/three.svg')";
-        //     };
-        //     if(entryString.length == 5) {
-        //         fifthChar.style.backgroundImage = "url('images/three.svg')";
-        //     };
-        //     if(entryString.length == 6) {
-        //         seventhChar.style.backgroundImage = "url('images/three.svg')";
-        //     };
-        //     if(entryString.length == 7) {
-        //         ninthChar.style.backgroundImage = "url('images/three.svg')";
-        //     };
-        //     if(entryString.length == 8) {
-        //         eleventhChar.style.backgroundImage = "url('images/three.svg')";
-        //     };
-        // };
+        };
         if(entryString.includes('.') && entryString.charAt(0) == '.') {
             if (entryString.length == 2) {
                 firstChar.style.backgroundImage = "url('images/three.svg')"
@@ -1114,27 +850,7 @@ const pressed0 = () => {
             if(entryString.length == 7) {
                 eleventhChar.style.backgroundImage = "url('images/zero.svg')";
             };
-        }
-        // if(entryString.includes('.') && entryString.charAt(1) == '.'&& pointCheck == true) {
-        //     if(entryString.length == 3) {
-        //         firstChar.style.backgroundImage = "url('images/zero.svg')";
-        //     };
-        //     if(entryString.length == 4) {
-        //         thirdChar.style.backgroundImage = "url('images/zero.svg')";
-        //     };
-        //     if(entryString.length == 5) {
-        //         fifthChar.style.backgroundImage = "url('images/zero.svg')";
-        //     };
-        //     if(entryString.length == 6) {
-        //         seventhChar.style.backgroundImage = "url('images/zero.svg')";
-        //     };
-        //     if(entryString.length == 7) {
-        //         ninthChar.style.backgroundImage = "url('images/zero.svg')";
-        //     };
-        //     if(entryString.length == 8) {
-        //         eleventhChar.style.backgroundImage = "url('images/zero.svg')";
-        //     };
-        // };
+        };
         if(entryString.includes('.') && entryString.charAt(0) == '.') {
             if (entryString.length == 2) {
                 firstChar.style.backgroundImage = "url('images/zero.svg')"
@@ -1225,10 +941,7 @@ const pressedPointAnim = () => {
     buttonPoint.style.backgroundRepeat = 'no-repeat';
 }
 
-const pressedPoint = () => {
-    if (!entryString.includes('.') && !savedData.includes('.')) {
-        entryString = entryString + ".";
-    };
+const innerPoint = () => {
     if (entryString.charAt(entryString.length-1) == ".") {
         if(entryString.length == 1) {
             thirteenthChar.style.backgroundImage = "url('images/dot.svg')";
@@ -1252,35 +965,20 @@ const pressedPoint = () => {
             twelfthChar.style.backgroundImage = "url('images/dot.svg')";
         };
     };
+}
+
+const pressedPoint = () => {
+    if (!entryString.includes('.') && !savedData.includes('.')) {
+        entryString = entryString + ".";
+    };
+    innerPoint();
 };
 
 const secondaryPoint = () => {
     if (!entryString.includes('.')) {
         entryString = entryString + ".";
     };
-    if (entryString.charAt(entryString.length-1) == ".") {
-        if(entryString.length == 1) {
-            thirteenthChar.style.backgroundImage = "url('images/dot.svg')";
-        };
-        if(entryString.length == 2) {
-            secondChar.style.backgroundImage = "url('images/dot.svg')";
-        };
-        if(entryString.length == 3) {
-            fourthChar.style.backgroundImage = "url('images/dot.svg')";
-        };
-        if(entryString.length == 4) {
-            sixthChar.style.backgroundImage = "url('images/dot.svg')";
-        };
-        if(entryString.length == 5) {
-            eighthChar.style.backgroundImage = "url('images/dot.svg')";
-        };
-        if(entryString.length == 6) {
-            tenthChar.style.backgroundImage = "url('images/dot.svg')";
-        };
-        if(entryString.length == 7) {
-            twelfthChar.style.backgroundImage = "url('images/dot.svg')";
-        };
-    };
+    innerPoint();
 }
 
 const unpressedPoint = () => {
