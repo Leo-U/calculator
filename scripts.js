@@ -1039,7 +1039,7 @@ const altClear = () => {
     if (saveCheck == true) {
         savedData = savedData + entryString.charAt(entryString.length - 1)
     };
-    if (savedData.slice(-2) !== entryString.slice(-2)) {
+    if (savedData.slice(-3) !== entryString.slice(-3)) {
         savedData = savedData.substring(0, savedData.length - 1)
     };
     if (savedData.length > 6 && entryString.charAt(entryString.length-2) == ".") {
