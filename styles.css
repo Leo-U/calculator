@@ -3,31 +3,23 @@ body {
 }
 
 #calc-background {
-    /* background-image: url(images/calc-demo.png);
-    background-repeat: no-repeat;
-    background-position: center 130px; */
     position: relative;
     display: flex;
     justify-content: center;
+    top: 70px;
 }
 
 #calc-container {
     right: -80px;
     margin: auto;
     width: 545px;
-    margin-top: -50px;
-    /* border: 1px solid black; */
     padding: 10px;
     border-radius: 30px;
     background-color: #EFEFEF;
-
     transform: scale(.65);
-
-
     position: absolute;
-    top: -70px;
+    top: -120px;
     left: -75px;
-    
     padding: 5px;
 }
 
