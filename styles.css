@@ -25,19 +25,42 @@ body {
 
 #display-div {
     margin: auto;
-    height: 145px;
-    width: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 220px;
+    width: 595px;
     background-color: #bdc8b8;
     border: 1px solid black;
     border-radius: 25px;
     margin-bottom: 10px;
-    margin-left: -5px;
+    margin-left: -26px;
+    margin-top: -10px;
+    margin-bottom: 25px;
 }
 
-#first-char, #third-char, #fifth-char, #seventh-char, #ninth-char, #eleventh-char {
+#first-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#second-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 16px;
+    margin-top: 4px;
+}
+#negative {
+    height: 17px;
+    width: 40px;
+    background: url(images/negative-blank.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-right: -15px;
+    margin-left: -25px;
+}
+
+#first-char, #third-char, #fifth-char, #seventh-char, #ninth-char, #eleventh-char, #fourteenth-char, #sixteenth-char, #eighteenth-char, #twentieth-char, #twenty-second-char, #twenty-fourth-char {
     height: 100px;
     width: 65px;
     margin-left: 5px;
@@ -47,7 +70,7 @@ body {
     background-repeat: no-repeat;
 }
 
-#second-char, #fourth-char, #sixth-char, #eighth-char, #tenth-char, #twelfth-char, #thirteenth-char {
+#second-char, #fourth-char, #sixth-char, #eighth-char, #tenth-char, #twelfth-char, #thirteenth-char, #fifteenth-char, #seventeenth-char, #nineteenth-char, #twenty-first-char, #twenty-third-char, #twenty-fifth-char {
     height: 16px;
     width: 16px;
     margin-top: 75px;
@@ -61,20 +84,24 @@ body {
     left: 3px;
 }
 
+
+
 #buttons-container {
     height: 540px;
-    width: 540px;
+    width: 580px;
     background-color: #EFEFEF;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+    margin-left: -8px;
 }
 
 #buttons-container-2 {
     margin: auto;
     height: 125px;
-    width: 540px;
+    width: 580px;
     background-color: #EFEFEF;
+    
 }
 
 .button {
@@ -149,10 +176,11 @@ body {
 
 #button-clear {
     background-image: url(images/clear.png);
-    width: 50%;
+    width: 48%;
 }
 
 #button-enter {
     background-image: url(images/enter.png);
-    width: 50%;
+    width: 48%;
+    margin-left: 12px;
 }

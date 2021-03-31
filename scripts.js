@@ -9,6 +9,8 @@ const divide = (a, b) => a / b;
 const power = (a, b) => a ** b;
 
 const operate = function(sign, a, b) {
+    a = parseFloat(a);
+    b = parseFloat(b);
     if(sign === "+") {
         return add(a, b)
     };
@@ -30,7 +32,10 @@ let entryString = '';
 let newEntryString = '';
 let pointCheck = false;
 let savedData = '';
-let saveCheck;
+let saveCheck = false;
+let a = '';
+let b = '';
+let operatorUsed = false;
 
 const thirteenthChar = document.querySelector('#thirteenth-char');
 const firstChar = document.querySelector('#first-char');
@@ -45,6 +50,22 @@ const ninthChar = document.querySelector('#ninth-char');
 const tenthChar = document.querySelector('#tenth-char');
 const eleventhChar = document.querySelector('#eleventh-char');
 const twelfthChar = document.querySelector('#twelfth-char');
+
+const saveAtOperate = () => {
+    if (savedData == '') {
+        a = entryString;
+    }else if (savedData !== '') {
+        a = savedData;
+    };
+};
+
+const saveAtEquals = () => {
+    if (savedData == '') {
+        b = entryString;
+    }else if (savedData !== '') {
+        b = savedData;
+    };
+};
 
 const shiftLeft = () => {
     if (entryString.length >= 7 && !entryString.includes('.') || entryString.length >= 8 && entryString.includes('.')) {
@@ -95,6 +116,10 @@ const pressed7Anim = () => {
     button7.style.backgroundRepeat = 'no-repeat';
 }
 const pressed7 = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     entryString = entryString + "7";
     shiftLeft();
     if (entryString.charAt(entryString.length-1) == "7") {
@@ -167,6 +192,10 @@ const pressed8Anim = () => {
     button8.style.backgroundRepeat = 'no-repeat';
 }
 const pressed8 = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     entryString = entryString + "8";
     shiftLeft();
     if (entryString.charAt(entryString.length-1) == "8") {
@@ -239,6 +268,10 @@ const pressed9Anim = () => {
     button9.style.backgroundRepeat = 'no-repeat';
 }
 const pressed9 = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     entryString = entryString + "9";
     shiftLeft();
     if (entryString.charAt(entryString.length-1) == "9") {
@@ -309,7 +342,9 @@ const buttonDivide = document.querySelector('#button-divide');
 const pressedDivide = () => {
     buttonDivide.style.background = 'url(images/divide-pressed.png)';
     buttonDivide.style.backgroundRepeat = 'no-repeat';
-    
+    saveAtOperate();
+    operatorUsed = true;
+    sign = "/";
 };
 const unpressedDivide = () => {
     buttonDivide.style.background = 'url(images/divide.png)';
@@ -334,6 +369,10 @@ const pressed4Anim = () => {
     button4.style.backgroundRepeat = 'no-repeat';
 }
 const pressed4 = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     entryString = entryString + "4";
     shiftLeft();
     if (entryString.charAt(entryString.length-1) == "4") {
@@ -406,6 +445,10 @@ const pressed5Anim = () => {
     button5.style.backgroundRepeat = 'no-repeat';
 }
 const pressed5 = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     entryString = entryString + "5";
     shiftLeft();
     if (entryString.charAt(entryString.length-1) == "5") {
@@ -478,6 +521,10 @@ const pressed6Anim = () => {
     button6.style.backgroundRepeat = 'no-repeat';
 }
 const pressed6 = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     entryString = entryString + "6";
     shiftLeft();
     if (entryString.charAt(entryString.length-1) == "6") {
@@ -547,7 +594,9 @@ const buttonMultiply = document.querySelector('#button-multiply');
 const pressedMultiply = () => {
     buttonMultiply.style.background = 'url(images/multiply-pressed.png)';
     buttonMultiply.style.backgroundRepeat = 'no-repeat';
-    
+    saveAtOperate();
+    operatorUsed = true;
+    sign = "*";
 };
 const unpressedMultiply = () => {
     buttonMultiply.style.background = 'url(images/multiply.png)';
@@ -572,6 +621,10 @@ const pressed1Anim = () => {
     button1.style.backgroundRepeat = 'no-repeat';
 }
 const pressed1 = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     entryString = entryString + "1";
     shiftLeft();
     if (entryString.charAt(entryString.length-1) == "1") {
@@ -644,6 +697,10 @@ const pressed2Anim = () => {
     button2.style.backgroundRepeat = 'no-repeat';
 }
 const pressed2 = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     entryString = entryString + "2";
     shiftLeft();
     if (entryString.charAt(entryString.length-1) == "2") {
@@ -716,6 +773,10 @@ const pressed3Anim = () => {
     button3.style.backgroundRepeat = 'no-repeat';
 }
 const pressed3 = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     entryString = entryString + "3";
     shiftLeft();
     if (entryString.charAt(entryString.length-1) == "3") {
@@ -786,7 +847,9 @@ const buttonSubtract = document.querySelector('#button-subtract');
 const pressedSubtract = () => {
     buttonSubtract.style.background = 'url(images/subtract-pressed.png)';
     buttonSubtract.style.backgroundRepeat = 'no-repeat';
-    
+    saveAtOperate();
+    operatorUsed = true;
+    sign = "-";
 };
 const unpressedSubtract = () => {
     buttonSubtract.style.background = 'url(images/subtract.png)';
@@ -811,6 +874,10 @@ const pressed0Anim = () => {
     button0.style.backgroundRepeat = 'no-repeat';
 }
 const pressed0 = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     entryString = entryString + "0";
     shiftLeft();
     if (entryString.charAt(entryString.length-1) == "0") {
@@ -893,7 +960,9 @@ const buttonEnter = document.querySelector('#button-enter');
 const pressedEnter = () => {
     buttonEnter.style.background = 'url(images/enter-pressed.png)';
     buttonEnter.style.backgroundRepeat = 'no-repeat';
-    
+    saveAtEquals();
+    operate(sign, a, b);
+    clearForCalc();
 };
 const unpressedEnter = () => {
     buttonEnter.style.background = 'url(images/enter.png)';
@@ -916,8 +985,11 @@ const buttonAdd = document.querySelector('#button-add');
 const pressedAdd = () => {
     buttonAdd.style.background = 'url(images/add-pressed.png)';
     buttonAdd.style.backgroundRepeat = 'no-repeat';
-    
+    saveAtOperate();
+    operatorUsed = true;
+    sign = "+";
 };
+
 const unpressedAdd = () => {
     buttonAdd.style.background = 'url(images/add.png)';
     buttonAdd.style.backgroundRepeat = 'no-repeat';
@@ -968,6 +1040,10 @@ const innerPoint = () => {
 }
 
 const pressedPoint = () => {
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
     if (!entryString.includes('.') && !savedData.includes('.')) {
         entryString = entryString + ".";
     };
@@ -1004,7 +1080,9 @@ const buttonPower = document.querySelector('#button-power');
 const pressedPower = () => {
     buttonPower.style.background = 'url(images/power-pressed.png)';
     buttonPower.style.backgroundRepeat = 'no-repeat';
-    
+    saveAtOperate();
+    operatorUsed = true;
+    sign = "**";
 };
 const unpressedPower = () => {
     buttonPower.style.background = 'url(images/power.png)';
@@ -1029,7 +1107,31 @@ const pressedClearAnim = () => {
     buttonClear.style.backgroundRepeat = 'no-repeat';
 }
 const pressedClear = () => {
-    location.reload();
+    clearForCalc();
+};
+
+const clearForCalc = () => {
+    clrFn();
+    entryString = '';
+    savedData = '';
+    pointCheck = false;
+    saveCheck = false;
+};
+
+const clrFn = () => {
+    firstChar.style.backgroundImage = "url('images/num-blank.svg')";
+    secondChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    thirdChar.style.backgroundImage = "url('images/num-blank.svg')";
+    fourthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    fifthChar.style.backgroundImage = "url('images/num-blank.svg')";
+    sixthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    seventhChar.style.backgroundImage = "url('images/num-blank.svg')";
+    eighthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    ninthChar.style.backgroundImage = "url('images/num-blank.svg')";
+    tenthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    eleventhChar.style.backgroundImage = "url('images/num-blank.svg')";
+    twelfthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    thirteenthChar.style.backgroundImage = "url('images/dot-blank.svg')";
 };
 
 const altClear = () => {
@@ -1050,19 +1152,7 @@ const altClear = () => {
     }
     saveCheck = true;
     entryString = '';
-    firstChar.style.backgroundImage = "url('images/num-blank.svg')";
-    secondChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    thirdChar.style.backgroundImage = "url('images/num-blank.svg')";
-    fourthChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    fifthChar.style.backgroundImage = "url('images/num-blank.svg')";
-    sixthChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    seventhChar.style.backgroundImage = "url('images/num-blank.svg')";
-    eighthChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    ninthChar.style.backgroundImage = "url('images/num-blank.svg')";
-    tenthChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    eleventhChar.style.backgroundImage = "url('images/num-blank.svg')";
-    twelfthChar.style.backgroundImage = "url('images/dot-blank.svg')";
-    thirteenthChar.style.backgroundImage = "url('images/dot-blank.svg')";
+    clrFn();
 }
 const unpressedClear = () => {
     buttonClear.style.background = 'url(images/clear.png)';
