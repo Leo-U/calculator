@@ -37,6 +37,7 @@ let a = '';
 let b = '';
 let operatorUsed = false;
 
+const negativeChar = document.querySelector('#negative')
 const thirteenthChar = document.querySelector('#thirteenth-char');
 const firstChar = document.querySelector('#first-char');
 const secondChar = document.querySelector('#second-char');
@@ -122,26 +123,48 @@ const pressed7 = () => {
     };
     entryString = entryString + "7";
     shiftLeft();
+    if (entryString.charAt(0) == "-") {
+        firstChar.style.backgroundImage = "url('images/seven.svg')";
+    }
     if (entryString.charAt(entryString.length-1) == "7") {
         if(entryString.length == 1) {
             firstChar.style.backgroundImage = "url('images/seven.svg')";
         };
-        if(entryString.length == 2 && !entryString.includes('.')) {
-            thirdChar.style.backgroundImage = "url('images/seven.svg')";
-        };
         if(!entryString.includes('.')) {
-            if(entryString.length == 3) {
-                fifthChar.style.backgroundImage = "url('images/seven.svg')";
+            if(!entryString.includes('-')) {
+                if(entryString.length == 2) {
+                    thirdChar.style.backgroundImage = "url('images/seven.svg')";
+                }
+                if(entryString.length == 3) {
+                    fifthChar.style.backgroundImage = "url('images/seven.svg')";
+                };
+                if(entryString.length == 4) {
+                    seventhChar.style.backgroundImage = "url('images/seven.svg')";
+                };
+                if(entryString.length == 5) {
+                    ninthChar.style.backgroundImage = "url('images/seven.svg')";
+                };
+                if(entryString.length == 6) {
+                    eleventhChar.style.backgroundImage = "url('images/seven.svg')";
+                }; 
             };
-            if(entryString.length == 4) {
-                seventhChar.style.backgroundImage = "url('images/seven.svg')";
-            };
-            if(entryString.length == 5) {
-                ninthChar.style.backgroundImage = "url('images/seven.svg')";
-            };
-            if(entryString.length == 6) {
-                eleventhChar.style.backgroundImage = "url('images/seven.svg')";
-            };
+            if(entryString.includes('-')) {
+                if(entryString.length == 3) {
+                    thirdChar.style.backgroundImage = "url('images/seven.svg')";
+                }
+                if(entryString.length == 4) {
+                    fifthChar.style.backgroundImage = "url('images/seven.svg')";
+                };
+                if(entryString.length == 5) {
+                    seventhChar.style.backgroundImage = "url('images/seven.svg')";
+                };
+                if(entryString.length == 6) {
+                    ninthChar.style.backgroundImage = "url('images/seven.svg')";
+                };
+                if(entryString.length == 7) {
+                    eleventhChar.style.backgroundImage = "url('images/seven.svg')";
+                };
+            }
         }
         if(entryString.includes('.') && entryString.charAt(1) !== '.' || entryString.charAt(1) == '.' && entryString.charAt(1) == '.'){
             if(entryString.length == 3) {
@@ -850,6 +873,16 @@ const pressedSubtract = () => {
     saveAtOperate();
     operatorUsed = true;
     sign = "-";
+
+    if (operatorUsed == true) {
+        clearForCalc();
+        operatorUsed = false;
+    };
+
+    if (entryString == '' && savedData == '') {
+        entryString = entryString + "-";
+        negativeChar.style.backgroundImage = "url('images/negative.svg')";
+    }
 };
 const unpressedSubtract = () => {
     buttonSubtract.style.background = 'url(images/subtract.png)';
@@ -1119,6 +1152,7 @@ const clearForCalc = () => {
 };
 
 const clrFn = () => {
+    negativeChar.style.backgroundImage = "url('images/negative-blank.svg')";
     firstChar.style.backgroundImage = "url('images/num-blank.svg')";
     secondChar.style.backgroundImage = "url('images/dot-blank.svg')";
     thirdChar.style.backgroundImage = "url('images/num-blank.svg')";
