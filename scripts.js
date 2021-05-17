@@ -1481,6 +1481,7 @@ const backgroundsForPoint = () => {
     };
 }
 const pressedPoint = () => {
+    prepForPopulate();
     backgroundsForPoint();
 }
 
@@ -1564,6 +1565,7 @@ const pressedClear = () => {
 }
 
 buttonClear.addEventListener('click', pressedClear);
+
 
 // button animations
 
@@ -1796,3 +1798,216 @@ const unpressedEnterAnim = () => {
 
 buttonEnter.addEventListener('mousedown', pressedEnterAnim);
 buttonEnter.addEventListener('mouseup', unpressedEnterAnim);
+
+
+// keyboard support
+
+document.addEventListener("keydown", function(event) {
+    if (event.key == '+') {
+        pressedAddAnim();
+        pressedPlus();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '+') {
+        unpressedAddAnim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '-') {
+        pressedMinusAnim();
+        pressedMinus();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '-') {
+        unpressedMinusAnim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '*') {
+        pressedMultiplyAnim();
+        pressedMultiply();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '*') {
+        unpressedMultiplyAnim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '/') {
+        pressedDivideAnim();
+        pressedDivide();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '/') {
+        unpressedDivideAnim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '^') {
+        pressedPowerAnim();
+        pressedPower();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '^') {
+        unpressedPowerAnim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '.') {
+        pressedPointAnim();
+        pressedPoint();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '.') {
+        unpressedPointAnim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '0') {
+        pressed0Anim();
+        pressed0();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '0') {
+        unpressed0Anim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '1') {
+        pressed1Anim();
+        pressed1();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '1') {
+        unpressed1Anim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '2') {
+        pressed2Anim();
+        pressed2();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '2') {
+        unpressed2Anim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '3') {
+        pressed3Anim();
+        pressed3();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '3') {
+        unpressed3Anim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '4') {
+        pressed4Anim();
+        pressed4();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '4') {
+        unpressed4Anim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '5') {
+        pressed5Anim();
+        pressed5();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '5') {
+        unpressed5Anim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '6') {
+        pressed6Anim();
+        pressed6();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '6') {
+        unpressed6Anim()
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '7') {
+        pressed7Anim();
+        pressed7();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '7') {
+        unpressed7Anim()
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '8') {
+        pressed8Anim();
+        pressed8();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '8') {
+        unpressed8Anim()
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == '9') {
+        pressed9Anim();
+        pressed9();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == '9') {
+        unpressed9Anim()
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == 'Enter') {
+        pressedEnterAnim();
+        pressedEnter();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == 'Enter') {
+        unpressedEnterAnim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == 'Delete') {
+        pressedClearAnim();
+        pressedClear();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == 'Delete') {
+        unpressedClearAnim();
+    }
+});
+document.addEventListener("keydown", function(event) {
+    if (event.key == 'Backspace') {
+        pressedClearAnim();
+        pressedClear();
+    }
+});
+document.addEventListener("keyup", function(event) {
+    if (event.key == 'Backspace') {
+        unpressedClearAnim();
+    }
+});
