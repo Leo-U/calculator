@@ -1542,11 +1542,257 @@ const pressedPower = () => {
 buttonPower.addEventListener('click', pressedPower);
 
 const pressedEnter = () => {
-    b = parseFloat(entryString);
-    console.log(operate(sign, a, b));
-    entryString = operate(sign, a, b);
-    populate();
-    operatorSwitch = 1;
+    if(a !== undefined) {
+        b = parseFloat(entryString);
+        console.log(operate(sign, a, b));
+        entryString = operate(sign, a, b);
+        populate();
+        operatorSwitch = 1;  
+    }
+
 }
 
 buttonEnter.addEventListener('click', pressedEnter);
+
+const pressedClear = () => {
+    clearDisplay();
+    a = undefined;
+    b = undefined;
+    sign = undefined;
+    operatorUsed = false;
+    operatorSwitch = 1;
+}
+
+buttonClear.addEventListener('click', pressedClear);
+
+// button animations
+
+const pressedAddAnim = () => {
+    buttonAdd.style.background = 'url(images/add-pressed.png)'
+    buttonAdd.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressedAddAnim = () => {
+    buttonAdd.style.background = 'url(images/add.png)'
+    buttonAdd.style.backgroundRepeat = 'no-repeat';
+}
+buttonAdd.addEventListener('mousedown', pressedAddAnim);
+buttonAdd.addEventListener('mouseup', unpressedAddAnim);
+
+const pressedMinusAnim = () => {
+    buttonSubtract.style.background = 'url(images/subtract-pressed.png)';
+    buttonSubtract.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressedMinusAnim = () => {
+    buttonSubtract.style.background = 'url(images/subtract.png)';
+    buttonSubtract.style.backgroundRepeat = 'no-repeat';
+}
+
+buttonSubtract.addEventListener('mousedown', pressedMinusAnim);
+buttonSubtract.addEventListener('mouseup', unpressedMinusAnim);
+
+const pressedMultiplyAnim = () => {
+    buttonMultiply.style.background = 'url(images/multiply-pressed.png)'
+    buttonMultiply.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressedMultiplyAnim = () => {
+    buttonMultiply.style.background = 'url(images/multiply.png)'
+    buttonMultiply.style.backgroundRepeat = 'no-repeat';
+}
+buttonMultiply.addEventListener('mousedown', pressedMultiplyAnim);
+buttonMultiply.addEventListener('mouseup', unpressedMultiplyAnim);
+
+const pressedDivideAnim = () => {
+    buttonDivide.style.background = 'url(images/divide-pressed.png)'
+    buttonDivide.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressedDivideAnim = () => {
+    buttonDivide.style.background = 'url(images/divide.png)'
+    buttonDivide.style.backgroundRepeat = 'no-repeat';
+}
+buttonDivide.addEventListener('mousedown', pressedDivideAnim);
+buttonDivide.addEventListener('mouseup', unpressedDivideAnim);
+
+const pressedPowerAnim = () => {
+    buttonPower.style.background = 'url(images/power-pressed.png)'
+    buttonPower.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressedPowerAnim = () => {
+    buttonPower.style.background = 'url(images/power.png)'
+    buttonPower.style.backgroundRepeat = 'no-repeat';
+}
+buttonPower.addEventListener('mousedown', pressedPowerAnim);
+buttonPower.addEventListener('mouseup', unpressedPowerAnim);
+
+const pressed0Anim = () => {
+    button0.style.background = 'url(images/0-pressed.png)';
+    button0.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressed0Anim = () => {
+    button0.style.background = 'url(images/0.png)';
+    button0.style.backgroundRepeat = 'no-repeat';
+}
+
+button0.addEventListener('mousedown', pressed0Anim);
+button0.addEventListener('mouseup', unpressed0Anim);
+
+const pressed1Anim = () => {
+    button1.style.background = 'url(images/1-pressed.png)';
+    button1.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressed1Anim = () => {
+    button1.style.background = 'url(images/1.png)';
+    button1.style.backgroundRepeat = 'no-repeat';
+}
+
+button1.addEventListener('mousedown', pressed1Anim);
+button1.addEventListener('mouseup', unpressed1Anim);
+
+const pressed2Anim = () => {
+    button2.style.background = 'url(images/2-pressed.png)';
+    button2.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressed2Anim = () => {
+    button2.style.background = 'url(images/2.png)';
+    button2.style.backgroundRepeat = 'no-repeat';
+}
+
+button2.addEventListener('mousedown', pressed2Anim);
+button2.addEventListener('mouseup', unpressed2Anim);
+
+const pressed3Anim = () => {
+    button3.style.background = 'url(images/3-pressed.png)';
+    button3.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressed3Anim = () => {
+    button3.style.background = 'url(images/3.png)';
+    button3.style.backgroundRepeat = 'no-repeat';
+}
+
+button3.addEventListener('mousedown', pressed3Anim);
+button3.addEventListener('mouseup', unpressed3Anim);
+
+const pressed4Anim = () => {
+    button4.style.background = 'url(images/4-pressed.png)';
+    button4.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressed4Anim = () => {
+    button4.style.background = 'url(images/4.png)';
+    button4.style.backgroundRepeat = 'no-repeat';
+}
+
+button4.addEventListener('mousedown', pressed4Anim);
+button4.addEventListener('mouseup', unpressed4Anim);
+
+const pressed5Anim = () => {
+    button5.style.background = 'url(images/5-pressed.png)';
+    button5.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressed5Anim = () => {
+    button5.style.background = 'url(images/5.png)';
+    button5.style.backgroundRepeat = 'no-repeat';
+}
+
+button5.addEventListener('mousedown', pressed5Anim);
+button5.addEventListener('mouseup', unpressed5Anim);
+
+const pressed6Anim = () => {
+    button6.style.background = 'url(images/6-pressed.png)';
+    button6.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressed6Anim = () => {
+    button6.style.background = 'url(images/6.png)';
+    button6.style.backgroundRepeat = 'no-repeat';
+}
+
+button6.addEventListener('mousedown', pressed6Anim);
+button6.addEventListener('mouseup', unpressed6Anim);
+
+const pressed7Anim = () => {
+    button7.style.background = 'url(images/7-pressed.png)';
+    button7.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressed7Anim = () => {
+    button7.style.background = 'url(images/7.png)';
+    button7.style.backgroundRepeat = 'no-repeat';
+}
+
+button7.addEventListener('mousedown', pressed7Anim);
+button7.addEventListener('mouseup', unpressed7Anim);
+
+const pressed8Anim = () => {
+    button8.style.background = 'url(images/8-pressed.png)';
+    button8.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressed8Anim = () => {
+    button8.style.background = 'url(images/8.png)';
+    button8.style.backgroundRepeat = 'no-repeat';
+}
+
+button8.addEventListener('mousedown', pressed8Anim);
+button8.addEventListener('mouseup', unpressed8Anim);
+
+const pressed9Anim = () => {
+    button9.style.background = 'url(images/9-pressed.png)';
+    button9.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressed9Anim = () => {
+    button9.style.background = 'url(images/9.png)';
+    button9.style.backgroundRepeat = 'no-repeat';
+}
+
+button9.addEventListener('mousedown', pressed9Anim);
+button9.addEventListener('mouseup', unpressed9Anim);
+
+const pressedPointAnim = () => {
+    buttonPoint.style.background = 'url(images/point-pressed.png)';
+    buttonPoint.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressedPointAnim = () => {
+    buttonPoint.style.background = 'url(images/point.png)';
+    buttonPoint.style.backgroundRepeat = 'no-repeat';
+}
+
+buttonPoint.addEventListener('mousedown', pressedPointAnim);
+buttonPoint.addEventListener('mouseup', unpressedPointAnim);
+
+const pressedClearAnim = () => {
+    buttonClear.style.background = 'url(images/clear-pressed.png)';
+    buttonClear.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressedClearAnim = () => {
+    buttonClear.style.background = 'url(images/clear.png)';
+    buttonClear.style.backgroundRepeat = 'no-repeat';
+}
+
+buttonClear.addEventListener('mousedown', pressedClearAnim);
+buttonClear.addEventListener('mouseup', unpressedClearAnim);
+
+const pressedEnterAnim = () => {
+    buttonEnter.style.background = 'url(images/enter-pressed.png)';
+    buttonEnter.style.backgroundRepeat = 'no-repeat';
+}
+
+const unpressedEnterAnim = () => {
+    buttonEnter.style.background = 'url(images/enter.png)';
+    buttonEnter.style.backgroundRepeat = 'no-repeat';
+}
+
+buttonEnter.addEventListener('mousedown', pressedEnterAnim);
+buttonEnter.addEventListener('mouseup', unpressedEnterAnim);

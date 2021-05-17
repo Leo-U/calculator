@@ -11,6 +11,14 @@ body {
     user-select: none;
 }
 
+#demo-div {
+    height: 680px;
+    width: 450px;
+    background-image: url(images/calc-demo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 #calc-background {
     position: relative;
     display: flex;
