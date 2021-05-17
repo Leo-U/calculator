@@ -29,7 +29,7 @@ const operate = function(sign, a, b) {
 let sign;
 let a;
 let b;
-let operatorUsed;
+let operatorUsed = false;
 let operatorSwitch = 1;
 
 const clearDisplay = () => {
@@ -1506,24 +1506,16 @@ const pressedPlus = () => {
 
 buttonAdd.addEventListener('click', pressedPlus);
 
-
 const backgroundsForMinus = () => {
     if(entryString == '') {
         entryString += '-';
         neg.style.backgroundImage = "url('images/negative.svg')";
-        negSwitch = 2;
     }
 }
 
-let negSwitch = 1;
-
 const pressedMinus = () => {
-    backgroundsForMinus();
-    if(negSwitch !== 2) {
         calculate();
         sign = "-";   
-        negSwitch = 1;   
-    };
 }
 
 buttonSubtract.addEventListener('click', pressedMinus);
@@ -1554,6 +1546,7 @@ const pressedEnter = () => {
     console.log(operate(sign, a, b));
     entryString = operate(sign, a, b);
     populate();
+    operatorSwitch = 1;
 }
 
 buttonEnter.addEventListener('click', pressedEnter);
