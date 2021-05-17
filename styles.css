@@ -26,6 +26,10 @@ body {
     top: 70px;
 }
 
+#demo-div {
+    transform: scale(.85);
+}
+
 #calc-container {
     right: -80px;
     margin: auto;
@@ -33,7 +37,7 @@ body {
     padding: 10px;
     border-radius: 30px;
     background-color: #EFEFEF;
-    transform: scale(.65);
+    transform: scale(.55);
     position: absolute;
     top: -120px;
     left: -75px;
