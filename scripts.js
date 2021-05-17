@@ -1493,7 +1493,7 @@ const calculate = () => {
     }else if(operatorSwitch == 2) {
         b = parseFloat(entryString);
         entryString = operate(sign, a, b);
-        console.log(entryString)
+        console.log(entryString);
         a = parseFloat(entryString);
         populate();
     }
@@ -1506,15 +1506,24 @@ const pressedPlus = () => {
 
 buttonAdd.addEventListener('click', pressedPlus);
 
+
 const backgroundsForMinus = () => {
     if(entryString == '') {
         entryString += '-';
         neg.style.backgroundImage = "url('images/negative.svg')";
+        negSwitch = 2;
     }
 }
 
+let negSwitch = 1;
+
 const pressedMinus = () => {
     backgroundsForMinus();
+    if(negSwitch !== 2) {
+        calculate();
+        sign = "-";   
+        negSwitch = 1;   
+    };
 }
 
 buttonSubtract.addEventListener('click', pressedMinus);
