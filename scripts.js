@@ -9,10 +9,8 @@ const divide = (a, b) => a / b;
 const power = (a, b) => a ** b;
 
 const operate = function(sign, a, b) {
-    a = parseFloat(a);
-    b = parseFloat(b);
     if(sign === "+") {
-        return add(a, b)
+        return (add(a, b));  
     };
     if(sign === "-") {
         return subtract(a, b)
@@ -27,6 +25,42 @@ const operate = function(sign, a, b) {
         return power(a, b)
     };
 };
+
+let sign;
+let a;
+let b;
+let operatorUsed;
+let operatorSwitch = 1;
+
+const clearDisplay = () => {
+    neg.style.backgroundImage = "url('images/negative-blank.svg')";
+    dot1.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot2.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot3.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot4.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot5.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot6.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot7.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot8.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot9.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot10.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot11.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot12.style.backgroundImage = "url('images/dot-blank.svg')";
+    dot13.style.backgroundImage = "url('images/dot-blank.svg')";
+    digit1.style.backgroundImage = "url('images/num-blank.svg')";
+    digit2.style.backgroundImage = "url('images/num-blank.svg')";
+    digit3.style.backgroundImage = "url('images/num-blank.svg')";
+    digit4.style.backgroundImage = "url('images/num-blank.svg')";
+    digit5.style.backgroundImage = "url('images/num-blank.svg')";
+    digit6.style.backgroundImage = "url('images/num-blank.svg')";
+    digit7.style.backgroundImage = "url('images/num-blank.svg')";
+    digit8.style.backgroundImage = "url('images/num-blank.svg')";
+    digit9.style.backgroundImage = "url('images/num-blank.svg')";
+    digit10.style.backgroundImage = "url('images/num-blank.svg')";
+    digit11.style.backgroundImage = "url('images/num-blank.svg')";
+    digit12.style.backgroundImage = "url('images/num-blank.svg')";
+    entryString = "";
+}
 
 // buttons
 
@@ -81,1284 +115,1436 @@ const digit12 = document.getElementById("digit-12");
 
 //populate display
 
-let initialString = '';
+let entryString = '';
 
-const pressed0 = () => {
-    if(initialString.length >= 1) {
-        initialString += '0';
-        if(!initialString.includes('.') && !initialString.includes('-')){
-            if(initialString.length == 2){
-                digit2.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 3){
-                digit3.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 4){
-                digit4.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 5){
-                digit5.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 6){
-                digit6.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 7){
-                digit7.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 8){
-                digit8.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 9){
-                digit9.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 10){
-                digit10.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 11){
-                digit11.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 12){
-                digit12.style.backgroundImage = "url('images/zero.svg')"
-            }
-        }else if(initialString.includes('.') && !initialString.includes('-') || initialString.includes('-') && !initialString.includes('.')) {
-            if(initialString.length == 2) {
-                digit1.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 3){
-                digit2.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 4){
-                digit3.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 5){
-                digit4.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 6){
-                digit5.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 7){
-                digit6.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 8){
-                digit7.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 9){
-                digit8.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 10){
-                digit9.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 11){
-                digit10.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 12){
-                digit11.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 13){
-                digit12.style.backgroundImage = "url('images/zero.svg')"
-            }
-        }else {
-            if(initialString.length == 3) {
-                digit1.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 4) {
-                digit2.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 5) {
-                digit3.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 6) {
-                digit4.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 7) {
-                digit5.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 8) {
-                digit6.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 9) {
-                digit7.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 10) {
-                digit8.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 11) {
-                digit9.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 12) {
-                digit10.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 13) {
-                digit11.style.backgroundImage = "url('images/zero.svg')"
-            }
-            if(initialString.length == 14) {
-                digit12.style.backgroundImage = "url('images/zero.svg')"
-            }
-        }
+let toPopulate;
 
+const populate = () => {
+    toPopulate = "x" + entryString;
+    clearDisplay();
+    for (let i = 0; toPopulate.length > 0; i++) {
+        toPopulate = toPopulate.slice(1);
+        if(toPopulate.charAt(0) === "-") {
+            backgroundsForMinus();
+        };
+        if(toPopulate.charAt(0) === ".") {
+            backgroundsForPoint();
+        };
+        if(toPopulate.charAt(0) === "0") {
+            backgroundsFor0();
+        };
+        if(toPopulate.charAt(0) === "1") {
+            backgroundsFor1();
+        };
+        if(toPopulate.charAt(0) === "2") {
+            backgroundsFor2();
+        };
+        if(toPopulate.charAt(0) === "3") {
+            backgroundsFor3();
+        };
+        if(toPopulate.charAt(0) === "4") {
+            backgroundsFor4();
+        };
+        if(toPopulate.charAt(0) === "5") {
+            backgroundsFor5();
+        };
+        if(toPopulate.charAt(0) === "6") {
+            backgroundsFor6();
+        };
+        if(toPopulate.charAt(0) === "7") {
+            backgroundsFor7();
+        };
+        if(toPopulate.charAt(0) === "8") {
+            backgroundsFor8();
+        };
+        if(toPopulate.charAt(0) === "9") {
+            backgroundsFor9();
+        };
     };
+};
+
+const prepForPopulate = () => {
+    if(operatorUsed === true) {
+        clearDisplay();
+        operatorSwitch = 2;
+        operatorUsed = false;
+    };
+};
+
+const backgroundsFor0 = () => {
+    entryString += '0';
+    if(!entryString.includes('.') && !entryString.includes('-')) {
+        if(entryString.length == 1) {
+            digit1.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 2) {
+            digit2.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 3) {
+            digit3.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 4) {
+            digit4.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 5) {
+            digit5.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 6) {
+            digit6.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 7) {
+            digit7.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 8) {
+            digit8.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 9) {
+            digit9.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 10) {
+            digit10.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 11) {
+            digit11.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 12) {
+            digit12.style.backgroundImage = "url('images/zero.svg')";
+        }  
+    }else if(entryString.includes('.') && !entryString.includes('-') || entryString.includes('-') && !entryString.includes('.')) {
+        if(entryString.length == 2) {
+            digit1.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 3) {
+            digit2.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 4) {
+            digit3.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 5) {
+            digit4.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 6) {
+            digit5.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 7) {
+            digit6.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 8) {
+            digit7.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 9) {
+            digit8.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 10) {
+            digit9.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 11) {
+            digit10.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 12) {
+            digit11.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 13) {
+            digit12.style.backgroundImage = "url('images/zero.svg')";
+        }
+    }else {
+        if(entryString.length == 3) {
+            digit1.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 4) {
+            digit2.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 5) {
+            digit3.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 6) {
+            digit4.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 7) {
+            digit5.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 8) {
+            digit6.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 9) {
+            digit7.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 10) {
+            digit8.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 11) {
+            digit9.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 12) {
+            digit10.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 13) {
+            digit11.style.backgroundImage = "url('images/zero.svg')";
+        }
+        if(entryString.length == 14) {
+            digit12.style.backgroundImage = "url('images/zero.svg')";
+        }
+    }
+}
+const pressed0 = () => {
+    prepForPopulate();
+    backgroundsFor0();
 };
 
 button0.addEventListener('click', pressed0);
 
-const pressed1 = () => {
-    initialString += '1';
-    if(!initialString.includes('.') && !initialString.includes('-')) {
-        if(initialString.length == 1) {
+const backgroundsFor1 = () => {
+    entryString += '1';
+    if(!entryString.includes('.') && !entryString.includes('-')) {
+        if(entryString.length == 1) {
             digit1.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 2) {
+        if(entryString.length == 2) {
             digit2.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit3.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit4.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit5.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit6.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit7.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit8.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit9.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit10.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit11.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit12.style.backgroundImage = "url('images/one.svg')";
         }  
-    }else if(initialString.includes('.') && !initialString.includes('-') || initialString.includes('-') && !initialString.includes('.')) {
-        if(initialString.length == 2) {
+    }else if(entryString.includes('.') && !entryString.includes('-') || entryString.includes('-') && !entryString.includes('.')) {
+        if(entryString.length == 2) {
             digit1.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit2.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit3.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit4.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit5.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit6.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit7.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit8.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit9.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit10.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit11.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 13) {
+        if(entryString.length == 13) {
             digit12.style.backgroundImage = "url('images/one.svg')";
         }
     }else {
-        if(initialString.length == 3) {
-            digit1.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 3) {
+            digit1.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 4) {
-            digit2.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 4) {
+            digit2.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 5) {
-            digit3.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 5) {
+            digit3.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 6) {
-            digit4.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 6) {
+            digit4.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 7) {
-            digit5.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 7) {
+            digit5.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 8) {
-            digit6.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 8) {
+            digit6.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 9) {
-            digit7.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 9) {
+            digit7.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 10) {
-            digit8.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 10) {
+            digit8.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 11) {
-            digit9.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 11) {
+            digit9.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 12) {
-            digit10.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 12) {
+            digit10.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 13) {
-            digit11.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 13) {
+            digit11.style.backgroundImage = "url('images/one.svg')";
         }
-        if(initialString.length == 14) {
-            digit12.style.backgroundImage = "url('images/one.svg')"
+        if(entryString.length == 14) {
+            digit12.style.backgroundImage = "url('images/one.svg')";
         }
     }
+}
 
+const pressed1 = () => {
+    prepForPopulate();
+    backgroundsFor1();
 };
 
 button1.addEventListener('click', pressed1);
 
-const pressed2 = () => {
-    initialString += '2';
-    if(!initialString.includes('.') && !initialString.includes('-')) {
-        if(initialString.length == 1) {
+const backgroundsFor2 = () => {
+    entryString += '2';
+    if(!entryString.includes('.') && !entryString.includes('-')) {
+        if(entryString.length == 1) {
             digit1.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 2) {
+        if(entryString.length == 2) {
             digit2.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit3.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit4.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit5.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit6.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit7.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit8.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit9.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit10.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit11.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit12.style.backgroundImage = "url('images/two.svg')";
         }  
-    }else if(initialString.includes('.') && !initialString.includes('-') || initialString.includes('-') && !initialString.includes('.')) {
-        if(initialString.length == 2) {
+    }else if(entryString.includes('.') && !entryString.includes('-') || entryString.includes('-') && !entryString.includes('.')) {
+        if(entryString.length == 2) {
             digit1.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit2.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit3.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit4.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit5.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit6.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit7.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit8.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit9.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit10.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit11.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 13) {
+        if(entryString.length == 13) {
             digit12.style.backgroundImage = "url('images/two.svg')";
         }
     }else {
-        if(initialString.length == 3) {
-            digit1.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 3) {
+            digit1.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 4) {
-            digit2.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 4) {
+            digit2.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 5) {
-            digit3.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 5) {
+            digit3.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 6) {
-            digit4.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 6) {
+            digit4.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 7) {
-            digit5.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 7) {
+            digit5.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 8) {
-            digit6.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 8) {
+            digit6.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 9) {
-            digit7.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 9) {
+            digit7.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 10) {
-            digit8.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 10) {
+            digit8.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 11) {
-            digit9.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 11) {
+            digit9.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 12) {
-            digit10.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 12) {
+            digit10.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 13) {
-            digit11.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 13) {
+            digit11.style.backgroundImage = "url('images/two.svg')";
         }
-        if(initialString.length == 14) {
-            digit12.style.backgroundImage = "url('images/two.svg')"
+        if(entryString.length == 14) {
+            digit12.style.backgroundImage = "url('images/two.svg')";
         }
     }
+}
+const pressed2 = () => {
+    prepForPopulate();
+    backgroundsFor2();
 };
 
 button2.addEventListener('click', pressed2);
 
-const pressed3 = () => {
-    initialString += '3';
-    if(!initialString.includes('.') && !initialString.includes('-')) {
-        if(initialString.length == 1) {
+const backgroundsFor3 = () => {
+    entryString += '3';
+    if(!entryString.includes('.') && !entryString.includes('-')) {
+        if(entryString.length == 1) {
             digit1.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 2) {
+        if(entryString.length == 2) {
             digit2.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit3.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit4.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit5.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit6.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit7.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit8.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit9.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit10.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit11.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit12.style.backgroundImage = "url('images/three.svg')";
         }  
-    }else if(initialString.includes('.') && !initialString.includes('-') || initialString.includes('-') && !initialString.includes('.')) {
-        if(initialString.length == 2) {
+    }else if(entryString.includes('.') && !entryString.includes('-') || entryString.includes('-') && !entryString.includes('.')) {
+        if(entryString.length == 2) {
             digit1.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit2.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit3.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit4.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit5.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit6.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit7.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit8.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit9.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit10.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit11.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 13) {
+        if(entryString.length == 13) {
             digit12.style.backgroundImage = "url('images/three.svg')";
         }
     }else {
-        if(initialString.length == 3) {
-            digit1.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 3) {
+            digit1.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 4) {
-            digit2.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 4) {
+            digit2.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 5) {
-            digit3.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 5) {
+            digit3.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 6) {
-            digit4.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 6) {
+            digit4.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 7) {
-            digit5.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 7) {
+            digit5.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 8) {
-            digit6.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 8) {
+            digit6.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 9) {
-            digit7.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 9) {
+            digit7.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 10) {
-            digit8.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 10) {
+            digit8.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 11) {
-            digit9.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 11) {
+            digit9.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 12) {
-            digit10.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 12) {
+            digit10.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 13) {
-            digit11.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 13) {
+            digit11.style.backgroundImage = "url('images/three.svg')";
         }
-        if(initialString.length == 14) {
-            digit12.style.backgroundImage = "url('images/three.svg')"
+        if(entryString.length == 14) {
+            digit12.style.backgroundImage = "url('images/three.svg')";
         }
     }
+}
+const pressed3 = () => {
+    prepForPopulate();
+    backgroundsFor3();
 };
 
 button3.addEventListener('click', pressed3);
 
-const pressed4 = () => {
-    initialString += '4';
-    if(!initialString.includes('.') && !initialString.includes('-')) {
-        if(initialString.length == 1) {
+const backgroundsFor4 = () => {
+    entryString += '4';
+    if(!entryString.includes('.') && !entryString.includes('-')) {
+        if(entryString.length == 1) {
             digit1.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 2) {
+        if(entryString.length == 2) {
             digit2.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit3.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit4.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit5.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit6.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit7.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit8.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit9.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit10.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit11.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit12.style.backgroundImage = "url('images/four.svg')";
         }  
-    }else if(initialString.includes('.') && !initialString.includes('-') || initialString.includes('-') && !initialString.includes('.')) {
-        if(initialString.length == 2) {
+    }else if(entryString.includes('.') && !entryString.includes('-') || entryString.includes('-') && !entryString.includes('.')) {
+        if(entryString.length == 2) {
             digit1.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit2.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit3.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit4.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit5.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit6.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit7.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit8.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit9.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit10.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit11.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 13) {
+        if(entryString.length == 13) {
             digit12.style.backgroundImage = "url('images/four.svg')";
         }
     }else {
-        if(initialString.length == 3) {
-            digit1.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 3) {
+            digit1.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 4) {
-            digit2.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 4) {
+            digit2.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 5) {
-            digit3.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 5) {
+            digit3.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 6) {
-            digit4.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 6) {
+            digit4.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 7) {
-            digit5.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 7) {
+            digit5.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 8) {
-            digit6.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 8) {
+            digit6.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 9) {
-            digit7.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 9) {
+            digit7.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 10) {
-            digit8.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 10) {
+            digit8.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 11) {
-            digit9.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 11) {
+            digit9.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 12) {
-            digit10.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 12) {
+            digit10.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 13) {
-            digit11.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 13) {
+            digit11.style.backgroundImage = "url('images/four.svg')";
         }
-        if(initialString.length == 14) {
-            digit12.style.backgroundImage = "url('images/four.svg')"
+        if(entryString.length == 14) {
+            digit12.style.backgroundImage = "url('images/four.svg')";
         }
     }
+}
+const pressed4 = () => {
+    prepForPopulate();
+    backgroundsFor4();
 };
 
 button4.addEventListener('click', pressed4);
 
-const pressed5 = () => {
-    initialString += '5';
-    if(!initialString.includes('.') && !initialString.includes('-')) {
-        if(initialString.length == 1) {
+const backgroundsFor5 = () => {
+    entryString += '5';
+    if(!entryString.includes('.') && !entryString.includes('-')) {
+        if(entryString.length == 1) {
             digit1.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 2) {
+        if(entryString.length == 2) {
             digit2.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit3.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit4.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit5.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit6.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit7.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit8.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit9.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit10.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit11.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit12.style.backgroundImage = "url('images/five.svg')";
         }  
-    }else if(initialString.includes('.') && !initialString.includes('-') || initialString.includes('-') && !initialString.includes('.')) {
-        if(initialString.length == 2) {
+    }else if(entryString.includes('.') && !entryString.includes('-') || entryString.includes('-') && !entryString.includes('.')) {
+        if(entryString.length == 2) {
             digit1.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit2.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit3.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit4.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit5.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit6.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit7.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit8.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit9.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit10.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit11.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 13) {
+        if(entryString.length == 13) {
             digit12.style.backgroundImage = "url('images/five.svg')";
         }
     }else {
-        if(initialString.length == 3) {
-            digit1.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 3) {
+            digit1.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 4) {
-            digit2.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 4) {
+            digit2.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 5) {
-            digit3.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 5) {
+            digit3.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 6) {
-            digit4.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 6) {
+            digit4.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 7) {
-            digit5.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 7) {
+            digit5.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 8) {
-            digit6.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 8) {
+            digit6.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 9) {
-            digit7.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 9) {
+            digit7.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 10) {
-            digit8.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 10) {
+            digit8.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 11) {
-            digit9.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 11) {
+            digit9.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 12) {
-            digit10.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 12) {
+            digit10.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 13) {
-            digit11.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 13) {
+            digit11.style.backgroundImage = "url('images/five.svg')";
         }
-        if(initialString.length == 14) {
-            digit12.style.backgroundImage = "url('images/five.svg')"
+        if(entryString.length == 14) {
+            digit12.style.backgroundImage = "url('images/five.svg')";
         }
     }
+}
+const pressed5 = () => {
+    prepForPopulate();
+    backgroundsFor5();
 };
 
 button5.addEventListener('click', pressed5);
 
-const pressed6 = () => {
-    initialString += '6';
-    if(!initialString.includes('.') && !initialString.includes('-')) {
-        if(initialString.length == 1) {
+const backgroundsFor6 = () => {
+    entryString += '6';
+    if(!entryString.includes('.') && !entryString.includes('-')) {
+        if(entryString.length == 1) {
             digit1.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 2) {
+        if(entryString.length == 2) {
             digit2.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit3.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit4.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit5.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit6.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit7.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit8.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit9.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit10.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit11.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit12.style.backgroundImage = "url('images/six.svg')";
         }  
-    }else if(initialString.includes('.') && !initialString.includes('-') || initialString.includes('-') && !initialString.includes('.')) {
-        if(initialString.length == 2) {
+    }else if(entryString.includes('.') && !entryString.includes('-') || entryString.includes('-') && !entryString.includes('.')) {
+        if(entryString.length == 2) {
             digit1.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit2.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit3.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit4.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit5.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit6.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit7.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit8.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit9.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit10.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit11.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 13) {
+        if(entryString.length == 13) {
             digit12.style.backgroundImage = "url('images/six.svg')";
         }
     }else {
-        if(initialString.length == 3) {
-            digit1.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 3) {
+            digit1.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 4) {
-            digit2.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 4) {
+            digit2.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 5) {
-            digit3.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 5) {
+            digit3.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 6) {
-            digit4.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 6) {
+            digit4.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 7) {
-            digit5.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 7) {
+            digit5.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 8) {
-            digit6.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 8) {
+            digit6.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 9) {
-            digit7.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 9) {
+            digit7.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 10) {
-            digit8.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 10) {
+            digit8.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 11) {
-            digit9.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 11) {
+            digit9.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 12) {
-            digit10.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 12) {
+            digit10.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 13) {
-            digit11.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 13) {
+            digit11.style.backgroundImage = "url('images/six.svg')";
         }
-        if(initialString.length == 14) {
-            digit12.style.backgroundImage = "url('images/six.svg')"
+        if(entryString.length == 14) {
+            digit12.style.backgroundImage = "url('images/six.svg')";
         }
     }
+}
+
+const pressed6 = () => {
+    prepForPopulate();
+    backgroundsFor6();
 };
 
 button6.addEventListener('click', pressed6);
 
-const pressed7 = () => {
-    initialString += '7';
-    if(!initialString.includes('.') && !initialString.includes('-')) {
-        if(initialString.length == 1) {
+const backgroundsFor7 = () => {
+    entryString += '7';
+    if(!entryString.includes('.') && !entryString.includes('-')) {
+        if(entryString.length == 1) {
             digit1.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 2) {
+        if(entryString.length == 2) {
             digit2.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit3.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit4.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit5.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit6.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit7.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit8.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit9.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit10.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit11.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit12.style.backgroundImage = "url('images/seven.svg')";
         }  
-    }else if(initialString.includes('.') && !initialString.includes('-') || initialString.includes('-') && !initialString.includes('.')) {
-        if(initialString.length == 2) {
+    }else if(entryString.includes('.') && !entryString.includes('-') || entryString.includes('-') && !entryString.includes('.')) {
+        if(entryString.length == 2) {
             digit1.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit2.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit3.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit4.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit5.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit6.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit7.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit8.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit9.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit10.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit11.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 13) {
+        if(entryString.length == 13) {
             digit12.style.backgroundImage = "url('images/seven.svg')";
         }
     }else {
-        if(initialString.length == 3) {
-            digit1.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 3) {
+            digit1.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 4) {
-            digit2.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 4) {
+            digit2.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 5) {
-            digit3.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 5) {
+            digit3.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 6) {
-            digit4.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 6) {
+            digit4.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 7) {
-            digit5.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 7) {
+            digit5.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 8) {
-            digit6.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 8) {
+            digit6.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 9) {
-            digit7.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 9) {
+            digit7.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 10) {
-            digit8.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 10) {
+            digit8.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 11) {
-            digit9.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 11) {
+            digit9.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 12) {
-            digit10.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 12) {
+            digit10.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 13) {
-            digit11.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 13) {
+            digit11.style.backgroundImage = "url('images/seven.svg')";
         }
-        if(initialString.length == 14) {
-            digit12.style.backgroundImage = "url('images/seven.svg')"
+        if(entryString.length == 14) {
+            digit12.style.backgroundImage = "url('images/seven.svg')";
         }
     }
+}
+const pressed7 = () => {
+    prepForPopulate();
+    backgroundsFor7();
 };
 
 button7.addEventListener('click', pressed7);
 
-const pressed8 = () => {
-    initialString += '8';
-    if(!initialString.includes('.') && !initialString.includes('-')) {
-        if(initialString.length == 1) {
+const backgroundsFor8 = () => {
+    entryString += '8';
+    if(!entryString.includes('.') && !entryString.includes('-')) {
+        if(entryString.length == 1) {
             digit1.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 2) {
+        if(entryString.length == 2) {
             digit2.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit3.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit4.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit5.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit6.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit7.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit8.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit9.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit10.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit11.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit12.style.backgroundImage = "url('images/eight.svg')";
         }  
-    }else if(initialString.includes('.') && !initialString.includes('-') || initialString.includes('-') && !initialString.includes('.')) {
-        if(initialString.length == 2) {
+    }else if(entryString.includes('.') && !entryString.includes('-') || entryString.includes('-') && !entryString.includes('.')) {
+        if(entryString.length == 2) {
             digit1.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit2.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit3.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit4.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit5.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit6.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit7.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit8.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit9.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit10.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit11.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 13) {
+        if(entryString.length == 13) {
             digit12.style.backgroundImage = "url('images/eight.svg')";
         }
     }else {
-        if(initialString.length == 3) {
-            digit1.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 3) {
+            digit1.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 4) {
-            digit2.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 4) {
+            digit2.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 5) {
-            digit3.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 5) {
+            digit3.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 6) {
-            digit4.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 6) {
+            digit4.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 7) {
-            digit5.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 7) {
+            digit5.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 8) {
-            digit6.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 8) {
+            digit6.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 9) {
-            digit7.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 9) {
+            digit7.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 10) {
-            digit8.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 10) {
+            digit8.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 11) {
-            digit9.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 11) {
+            digit9.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 12) {
-            digit10.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 12) {
+            digit10.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 13) {
-            digit11.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 13) {
+            digit11.style.backgroundImage = "url('images/eight.svg')";
         }
-        if(initialString.length == 14) {
-            digit12.style.backgroundImage = "url('images/eight.svg')"
+        if(entryString.length == 14) {
+            digit12.style.backgroundImage = "url('images/eight.svg')";
         }
     }
+}
+const pressed8 = () => {
+    prepForPopulate();
+    backgroundsFor8();
 };
 
 button8.addEventListener('click', pressed8);
 
-const pressed9 = () => {
-    initialString += '9';
-    if(!initialString.includes('.') && !initialString.includes('-')) {
-        if(initialString.length == 1) {
+const backgroundsFor9 = () => {
+    entryString += '9';
+    if(!entryString.includes('.') && !entryString.includes('-')) {
+        if(entryString.length == 1) {
             digit1.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 2) {
+        if(entryString.length == 2) {
             digit2.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit3.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit4.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit5.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit6.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit7.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit8.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit9.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit10.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit11.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit12.style.backgroundImage = "url('images/nine.svg')";
         }  
-    }else if(initialString.includes('.') && !initialString.includes('-') || initialString.includes('-') && !initialString.includes('.')) {
-        if(initialString.length == 2) {
+    }else if(entryString.includes('.') && !entryString.includes('-') || entryString.includes('-') && !entryString.includes('.')) {
+        if(entryString.length == 2) {
             digit1.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 3) {
+        if(entryString.length == 3) {
             digit2.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 4) {
+        if(entryString.length == 4) {
             digit3.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 5) {
+        if(entryString.length == 5) {
             digit4.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 6) {
+        if(entryString.length == 6) {
             digit5.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 7) {
+        if(entryString.length == 7) {
             digit6.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 8) {
+        if(entryString.length == 8) {
             digit7.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 9) {
+        if(entryString.length == 9) {
             digit8.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 10) {
+        if(entryString.length == 10) {
             digit9.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 11) {
+        if(entryString.length == 11) {
             digit10.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 12) {
+        if(entryString.length == 12) {
             digit11.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 13) {
+        if(entryString.length == 13) {
             digit12.style.backgroundImage = "url('images/nine.svg')";
         }
     }else {
-        if(initialString.length == 3) {
-            digit1.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 3) {
+            digit1.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 4) {
-            digit2.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 4) {
+            digit2.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 5) {
-            digit3.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 5) {
+            digit3.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 6) {
-            digit4.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 6) {
+            digit4.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 7) {
-            digit5.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 7) {
+            digit5.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 8) {
-            digit6.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 8) {
+            digit6.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 9) {
-            digit7.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 9) {
+            digit7.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 10) {
-            digit8.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 10) {
+            digit8.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 11) {
-            digit9.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 11) {
+            digit9.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 12) {
-            digit10.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 12) {
+            digit10.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 13) {
-            digit11.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 13) {
+            digit11.style.backgroundImage = "url('images/nine.svg')";
         }
-        if(initialString.length == 14) {
-            digit12.style.backgroundImage = "url('images/nine.svg')"
+        if(entryString.length == 14) {
+            digit12.style.backgroundImage = "url('images/nine.svg')";
         }
     }
+}
+const pressed9 = () => {
+    prepForPopulate();
+    backgroundsFor9();
 };
 
 button9.addEventListener('click', pressed9);
 
-const pressedPoint = () => {
-    if(!initialString.includes('.')) {
-        initialString += '.';
-        if(!initialString.includes('-')) {
-            if(initialString.length == 1) {
-                dot1.style.backgroundImage = "url('images/dot.svg')"
+const backgroundsForPoint = () => {
+    if(!entryString.includes('.')) {
+        entryString += '.';
+        if(!entryString.includes('-')) {
+            if(entryString.length == 1) {
+                dot1.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 2) {
-                dot2.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 2) {
+                dot2.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 3) {
-                dot3.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 3) {
+                dot3.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 4) {
-                dot4.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 4) {
+                dot4.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 5) {
-                dot5.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 5) {
+                dot5.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 6) {
-                dot6.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 6) {
+                dot6.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 7) {
-                dot7.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 7) {
+                dot7.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 8) {
-                dot8.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 8) {
+                dot8.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 9) {
-                dot9.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 9) {
+                dot9.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 10) {
-                dot10.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 10) {
+                dot10.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 11) {
-                dot11.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 11) {
+                dot11.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 12) {
-                dot12.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 12) {
+                dot12.style.backgroundImage = "url('images/dot.svg')";
             }
-            if(initialString.length == 13) {
-                dot13.style.backgroundImage = "url('images/dot.svg')"
+            if(entryString.length == 13) {
+                dot13.style.backgroundImage = "url('images/dot.svg')";
             }
         }else {
-            if (initialString.length == 2) {
-                dot1.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 2) {
+                dot1.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 3) {
-                dot2.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 3) {
+                dot2.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 4) {
-                dot3.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 4) {
+                dot3.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 5) {
-                dot4.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 5) {
+                dot4.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 6) {
-                dot5.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 6) {
+                dot5.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 7) {
-                dot6.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 7) {
+                dot6.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 8) {
-                dot7.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 8) {
+                dot7.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 9) {
-                dot8.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 9) {
+                dot8.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 10) {
-                dot9.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 10) {
+                dot9.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 11) {
-                dot10.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 11) {
+                dot10.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 12) {
-                dot11.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 12) {
+                dot11.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 13) {
-                dot12.style.backgroundImage = "url('images/dot.svg')"
+            if (entryString.length == 13) {
+                dot12.style.backgroundImage = "url('images/dot.svg')";
             }
-            if (initialString.length == 14) {
-                dot13.style.backgroundImage = "url('images/dot.svg')"
-            }
-        }
+            if (entryString.length == 14) {
+                dot13.style.backgroundImage = "url('images/dot.svg')";
+            };
+        };
 
     };
+}
+const pressedPoint = () => {
+    backgroundsForPoint();
 }
 
 buttonPoint.addEventListener('click', pressedPoint);
 
-const pressedMinus = () => {
-    if(initialString == '') {
-        initialString += '-';
-        neg.style.backgroundImage = "url('images/negative.svg')"
+const calculate = () => {
+    operatorUsed = true;
+    if(operatorSwitch == 1) {
+        a = parseFloat(entryString);
+    }else if(operatorSwitch == 2) {
+        b = parseFloat(entryString);
+        entryString = operate(sign, a, b);
+        console.log(entryString)
+        a = parseFloat(entryString);
+        populate();
     }
 }
 
+const pressedPlus = () => {
+    calculate();
+    sign = "+";
+}
+
+buttonAdd.addEventListener('click', pressedPlus);
+
+const backgroundsForMinus = () => {
+    if(entryString == '') {
+        entryString += '-';
+        neg.style.backgroundImage = "url('images/negative.svg')";
+    }
+}
+
+const pressedMinus = () => {
+    backgroundsForMinus();
+}
+
 buttonSubtract.addEventListener('click', pressedMinus);
+
+const pressedMultiply = () => {
+    calculate();
+    sign = "*";
+}
+
+buttonMultiply.addEventListener('click', pressedMultiply);
+
+const pressedDivide = () => {
+    calculate();
+    sign = "/";
+}
+
+buttonDivide.addEventListener('click', pressedDivide);
+
+const pressedPower = () => {
+    calculate();
+    sign = "**";
+}
+
+buttonPower.addEventListener('click', pressedPower);
+
+const pressedEnter = () => {
+    b = parseFloat(entryString);
+    console.log(operate(sign, a, b));
+    entryString = operate(sign, a, b);
+    populate();
+}
+
+buttonEnter.addEventListener('click', pressedEnter);
